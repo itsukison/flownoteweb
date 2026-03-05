@@ -16,7 +16,7 @@ const FeatureTilted: React.FC = () => {
                         設計された機能
                     </h2>
                     <p className="text-lg text-text-primary/70 leading-relaxed font-medium">
-                        面接の準備から本番、そして振り返りまで。CueMeは一貫してあなたのパフォーマンスを最大化するために作られています。
+                        面接の準備から本番、そして振り返りまで。Flownoteは一貫してあなたのパフォーマンスを最大化するために作られています。
                     </p>
                 </div>
 

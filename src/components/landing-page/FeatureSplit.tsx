@@ -133,14 +133,14 @@ const FeatureSplit: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Central Node: CueMe AI (Bottom Center) - Enlarged */}
-                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm p-4 pr-8 rounded-3xl shadow-xl border-t border-white/50 border-b-4 border-b-subtle-bg flex items-center gap-4 z-20 min-w-[280px]">
+                        {/* Central Node: Flownote AI (Bottom Center) - Enlarged */}
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm p-4 pr-8 rounded-3xl shadow-xl border-t border-white/50 border-b-4 border-b-subtle-bg flex items-center gap-2.5 z-20 min-w-[280px]">
                             <div className="w-12 h-12 rounded-full bg-accent-lime flex items-center justify-center text-text-primary shadow-inner shrink-0">
                                 <img src="/logo.png" alt="AI" className="w-6 h-6 object-contain" />
                             </div>
                             <div className="flex-1">
                                 <div className="text-base font-bold text-text-primary flex items-center gap-2">
-                                    CueMe AI
+                                    Flownote AI
                                     <span className="px-2 py-0.5 rounded-full bg-accent-lime/20 text-accent-lime-dark text-[10px] font-extrabold uppercase tracking-wider">PRO</span>
                                 </div>
                                 <div className="flex items-center gap-1.5 mt-1">

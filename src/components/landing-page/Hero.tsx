@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
             >
                 見えない会話アシスト <br />
                 <span className="bg-gradient-to-r from-text-primary  bg-clip-text ">
-                    CueMe
+                    Flownote
                 </span>
             </motion.h1>
 
@@ -115,11 +115,11 @@ const Hero: React.FC = () => {
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                     >
-                        {/* Layer 1: Normal Screen (No CueMe) */}
+                        {/* Layer 1: Normal Screen (No Flownote) */}
                         <div className="absolute inset-0">
                             <img
                                 src="/inivisible.png"
-                                alt="Without CueMe"
+                                alt="Without Flownote"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute bottom-8 left-8 bg-black/70 backdrop-blur text-white text-sm px-4 py-2 rounded-lg font-medium shadow-sm">
@@ -127,14 +127,14 @@ const Hero: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Layer 2: With CueMe (Clipped) */}
+                        {/* Layer 2: With Flownote (Clipped) */}
                         <div
                             className="absolute inset-0"
                             style={{ clipPath: `inset(0 0 0 ${dragPosition}%)` }}
                         >
                             <img
                                 src="/visible.png"
-                                alt="With CueMe"
+                                alt="With Flownote"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute bottom-8 right-8 bg-accent-lime/90 backdrop-blur text-text-primary text-sm font-bold px-4 py-2 rounded-lg shadow-lg border border-accent-lime">

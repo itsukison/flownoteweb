@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.cueme.ink'
+  const baseUrl = 'https://www.flownote.ink'
   
   return [
     {

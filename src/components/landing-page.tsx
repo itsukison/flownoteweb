@@ -31,8 +31,8 @@ const SectionWrapper = ({
   );
 };
 
-// Adapted SectionWrapper to support NewCueme's logic of switching backgrounds
-const NewCuemeSectionWrapper = ({
+// Adapted SectionWrapper to support NewFlownote's logic of switching backgrounds
+const NewFlownoteSectionWrapper = ({
   children,
   className = "bg-white",
   hasBorder = true
@@ -44,10 +44,10 @@ const NewCuemeSectionWrapper = ({
   return (
     <div className={`w-full ${className} ${hasBorder ? 'border-t border-gray-200' : ''}`}>
       {/* 
-         NewCueme has a "max-w-7xl mx-auto border-x border-gray-100 bg-white h-full relative" inner container.
-         I will replicate that but with CueMeWeb border colors.
-         Inner bg should be white to match NewCueme's clean look? Or app-bg?
-         User said "NewCume as a template". NewCueme uses white inner. 
+         NewFlownote has a "max-w-7xl mx-auto border-x border-gray-100 bg-white h-full relative" inner container.
+         I will replicate that but with FlownoteWeb border colors.
+         Inner bg should be white to match NewFlownote's clean look? Or app-bg?
+         User said "NewCume as a template". NewFlownote uses white inner. 
       */}
       <div className="max-w-7xl mx-auto border-x border-gray-200 bg-white h-full relative">
         {children}
@@ -62,46 +62,46 @@ export default function LandingPage() {
       <Navbar />
       <main className="pt-24">
         {/* Hero Section - White Sides */}
-        <NewCuemeSectionWrapper className="bg-white" hasBorder={false}>
+        <NewFlownoteSectionWrapper className="bg-white" hasBorder={false}>
           <Hero />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Feature Split - Diagonal Sides */}
-        <NewCuemeSectionWrapper className="bg-diagonal-lines">
+        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
           <FeatureSplit />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Feature Tilted - White Sides */}
-        <NewCuemeSectionWrapper className="bg-white">
+        <NewFlownoteSectionWrapper className="bg-white">
           <FeatureTilted />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Feature Grid - Diagonal Sides */}
-        <NewCuemeSectionWrapper className="bg-diagonal-lines">
+        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
           <FeatureGrid />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Stats - White Sides */}
-        <NewCuemeSectionWrapper className="bg-white">
+        <NewFlownoteSectionWrapper className="bg-white">
           <Stats />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Testimonials - Diagonal Sides */}
-        <NewCuemeSectionWrapper className="bg-diagonal-lines">
+        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
           <Testimonials />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Pricing - White Sides */}
-        <NewCuemeSectionWrapper className="bg-white">
+        <NewFlownoteSectionWrapper className="bg-white">
           <Pricing />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
 
         {/* Download App & Footer Container - Diagonal Sides */}
-        <NewCuemeSectionWrapper className="bg-diagonal-lines" hasBorder={true}>
+        <NewFlownoteSectionWrapper className="bg-diagonal-lines" hasBorder={true}>
           <DownloadApp />
           {/* Footer Self-contained Card */}
           <Footer />
-        </NewCuemeSectionWrapper>
+        </NewFlownoteSectionWrapper>
       </main>
     </div>
   );

@@ -32,7 +32,7 @@ export const event = ({
   }
 }
 
-// Custom events for CueMe
+// Custom events for Flownote
 export const trackDownload = (platform: string) => {
   event({
     action: 'download',

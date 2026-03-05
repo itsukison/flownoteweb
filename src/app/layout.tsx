@@ -18,7 +18,7 @@ const russoOne = Russo_One({
 });
 
 export const metadata: Metadata = {
-  title: "CueMe - AI面接対策ツール | 面接カンニング・AI会議サポート",
+  title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
   description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。AI会議ツールとしても活用可能。無料ダウンロード開始。",
   keywords: [
     "AI面接",
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     "面接回答",
     "就職活動"
   ],
-  authors: [{ name: "CueMe Team" }],
-  creator: "CueMe",
-  publisher: "CueMe",
+  authors: [{ name: "Flownote Team" }],
+  creator: "Flownote",
+  publisher: "Flownote",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.cueme.ink'),
+  metadataBase: new URL('https://www.flownote.ink'),
   alternates: {
     canonical: '/',
     languages: {
@@ -54,16 +54,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "CueMe - AI面接対策ツール | 面接カンニング・AI会議サポート",
+    title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
     description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。",
-    url: 'https://www.cueme.ink',
-    siteName: 'CueMe',
+    url: 'https://www.flownote.ink',
+    siteName: 'Flownote',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'CueMe AI面接対策ツール',
+        alt: 'Flownote AI面接対策ツール',
       },
     ],
     locale: 'ja_JP',
@@ -71,10 +71,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "CueMe - AI面接対策ツール | 面接カンニング・AI会議サポート",
+    title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
     description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。",
     images: ['/og-image.jpg'],
-    creator: '@cueme_app',
+    creator: '@flownote_app',
   },
   robots: {
     index: true,
@@ -117,13 +117,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <link rel="canonical" href="https://www.cueme.ink" />
+        <link rel="canonical" href="https://www.flownote.ink" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#013220" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="CueMe" />
-        <meta name="application-name" content="CueMe" />
+        <meta name="apple-mobile-web-app-title" content="Flownote" />
+        <meta name="application-name" content="Flownote" />
         <meta name="msapplication-TileColor" content="#013220" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <link rel="manifest" href="/manifest.json" />
@@ -135,25 +135,25 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "CueMe",
+              "name": "Flownote",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Windows, macOS, Linux",
               "description": "AI面接対策ツール。面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率向上。",
-              "url": "https://www.cueme.ink",
-              "downloadUrl": "https://www.cueme.ink/download",
+              "url": "https://www.flownote.ink",
+              "downloadUrl": "https://www.flownote.ink/download",
               "softwareVersion": "2.0",
               "datePublished": "2024-01-01",
               "dateModified": "2025-01-01",
               "author": {
                 "@type": "Organization",
-                "name": "CueMe Team"
+                "name": "Flownote Team"
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "CueMe",
+                "name": "Flownote",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.cueme.ink/logo.png"
+                  "url": "https://www.flownote.ink/logo.png"
                 }
               },
               "offers": {
@@ -181,9 +181,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "CueMe",
-              "url": "https://www.cueme.ink",
-              "logo": "https://www.cueme.ink/logo.png",
+              "name": "Flownote",
+              "url": "https://www.flownote.ink",
+              "logo": "https://www.flownote.ink/logo.png",
               "description": "AI面接対策ツールの開発・提供企業",
               "foundingDate": "2024",
               "contactPoint": {
@@ -192,7 +192,7 @@ export default function RootLayout({
                 "availableLanguage": ["Japanese", "English"]
               },
               "sameAs": [
-                "https://twitter.com/cueme_app"
+                "https://twitter.com/flownote_app"
               ]
             })
           }}
@@ -208,10 +208,10 @@ export default function RootLayout({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "CueMeは面接カンニングツールですか？",
+                  "name": "Flownoteは面接カンニングツールですか？",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "CueMeは面接対策・練習ツールです。リアルタイムで回答のヒントを表示し、面接準備をサポートします。"
+                    "text": "Flownoteは面接対策・練習ツールです。リアルタイムで回答のヒントを表示し、面接準備をサポートします。"
                   }
                 },
                 {
@@ -219,7 +219,7 @@ export default function RootLayout({
                   "name": "AI面接対策の効果はありますか？",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、CueMeユーザーの85%が面接通過率の向上を報告しています。AI生成の質問で効率的な対策が可能です。"
+                    "text": "はい、Flownoteユーザーの85%が面接通過率の向上を報告しています。AI生成の質問で効率的な対策が可能です。"
                   }
                 },
                 {

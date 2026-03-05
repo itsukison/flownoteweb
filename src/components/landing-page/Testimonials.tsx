@@ -9,7 +9,7 @@ const testimonials = [
         name: 'K.T.',
         role: 'マーケティング職 / 20代',
         avatar: 'https://picsum.photos/100/100?random=1',
-        content: "面接で頭が真っ白になることが多かったのですが、CueMeのおかげで落ち着いて回答できるようになり、第一志望に内定しました。"
+        content: "面接で頭が真っ白になることが多かったのですが、Flownoteのおかげで落ち着いて回答できるようになり、第一志望に内定しました。"
     },
     {
         name: 'Y.S.',
@@ -51,7 +51,7 @@ const testimonials = [
         name: 'M.K.',
         role: '人事 / 20代',
         avatar: 'https://picsum.photos/100/100?random=8',
-        content: "採用側の視点で見ても、CueMeのアドバイスは非常に的確。求職者が本当に伝えるべき強みを引き出してくれています。"
+        content: "採用側の視点で見ても、Flownoteのアドバイスは非常に的確。求職者が本当に伝えるべき強みを引き出してくれています。"
     },
     {
         name: 'T.K.',
@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
                     transition={{ delay: 0.1 }}
                     className="text-lg text-text-primary/60 font-medium"
                 >
-                    多くの転職者がCueMeを使ってキャリアアップを実現しています。
+                    多くの転職者がFlownoteを使ってキャリアアップを実現しています。
                 </motion.p>
             </div>
 

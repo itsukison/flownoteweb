@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Download, Apple } from 'lucide-react';
 
 const DownloadApp: React.FC = () => {
-    const [downloadUrl, setDownloadUrl] = React.useState<string>('https://github.com/itsukison/CueMeFinal/releases/latest');
+    const [downloadUrl, setDownloadUrl] = React.useState<string>('https://github.com/itsukison/flownote/releases/latest');
 
     React.useEffect(() => {
         const fetchLatestRelease = async () => {
             try {
-                const response = await fetch('https://api.github.com/repos/itsukison/CueMeFinal/releases/latest');
+                const response = await fetch('https://api.github.com/repos/itsukison/flownote/releases/latest');
                 if (!response.ok) return;
 
                 const data = await response.json();

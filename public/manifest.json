@@ -1,6 +1,6 @@
 {
-  "name": "CueMe - AI面接対策ツール",
-  "short_name": "CueMe",
+  "name": "Flownote - AI面接対策ツール",
+  "short_name": "Flownote",
   "description": "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。",
   "start_url": "/",
   "display": "standalone",

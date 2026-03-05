@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.cueme.ink'
+  const baseUrl = 'https://www.flownote.ink'
   
   return {
     rules: [
