@@ -31,10 +31,10 @@ const SectionWrapper = ({
   );
 };
 
-// Adapted SectionWrapper to support NewFlownote's logic of switching backgrounds
+// Adapted SectionWrapper to support Flownote's logic of switching backgrounds
 const NewFlownoteSectionWrapper = ({
   children,
-  className = "bg-white",
+  className = "bg-background",
   hasBorder = true
 }: {
   children?: React.ReactNode;
@@ -42,14 +42,8 @@ const NewFlownoteSectionWrapper = ({
   hasBorder?: boolean;
 }) => {
   return (
-    <div className={`w-full ${className} ${hasBorder ? 'border-t border-gray-200' : ''}`}>
-      {/* 
-         NewFlownote has a "max-w-7xl mx-auto border-x border-gray-100 bg-white h-full relative" inner container.
-         I will replicate that but with FlownoteWeb border colors.
-         Inner bg should be white to match NewFlownote's clean look? Or app-bg?
-         User said "NewCume as a template". NewFlownote uses white inner. 
-      */}
-      <div className="max-w-7xl mx-auto border-x border-gray-200 bg-white h-full relative">
+    <div className={`w-full ${className} ${hasBorder ? 'border-t border-border' : ''}`}>
+      <div className="max-w-7xl mx-auto border-x border-border h-full relative">
         {children}
       </div>
     </div>
@@ -58,48 +52,47 @@ const NewFlownoteSectionWrapper = ({
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-text-primary overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-background text-text-primary overflow-x-hidden font-sans">
       <Navbar />
       <main className="pt-24">
-        {/* Hero Section - White Sides */}
-        <NewFlownoteSectionWrapper className="bg-white" hasBorder={false}>
+        {/* Hero Section */}
+        <NewFlownoteSectionWrapper className="bg-background" hasBorder={false}>
           <Hero />
         </NewFlownoteSectionWrapper>
 
-        {/* Feature Split - Diagonal Sides */}
-        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
+        {/* Feature Split - Darker Section */}
+        <NewFlownoteSectionWrapper className="bg-section-bg">
           <FeatureSplit />
         </NewFlownoteSectionWrapper>
 
-        {/* Feature Tilted - White Sides */}
-        <NewFlownoteSectionWrapper className="bg-white">
+        {/* Feature Tilted */}
+        <NewFlownoteSectionWrapper className="bg-background">
           <FeatureTilted />
         </NewFlownoteSectionWrapper>
 
-        {/* Feature Grid - Diagonal Sides */}
-        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
+        {/* Feature Grid - Darker Section */}
+        <NewFlownoteSectionWrapper className="bg-section-bg">
           <FeatureGrid />
         </NewFlownoteSectionWrapper>
 
-        {/* Stats - White Sides */}
-        <NewFlownoteSectionWrapper className="bg-white">
+        {/* Stats */}
+        <NewFlownoteSectionWrapper className="bg-background">
           <Stats />
         </NewFlownoteSectionWrapper>
 
-        {/* Testimonials - Diagonal Sides */}
-        <NewFlownoteSectionWrapper className="bg-diagonal-lines">
+        {/* Testimonials - Darker Section */}
+        <NewFlownoteSectionWrapper className="bg-section-bg">
           <Testimonials />
         </NewFlownoteSectionWrapper>
 
-        {/* Pricing - White Sides */}
-        <NewFlownoteSectionWrapper className="bg-white">
+        {/* Pricing */}
+        <NewFlownoteSectionWrapper className="bg-background">
           <Pricing />
         </NewFlownoteSectionWrapper>
 
-        {/* Download App & Footer Container - Diagonal Sides */}
-        <NewFlownoteSectionWrapper className="bg-diagonal-lines" hasBorder={true}>
+        {/* Download App & Footer Container - Darker Section */}
+        <NewFlownoteSectionWrapper className="bg-section-bg" hasBorder={true}>
           <DownloadApp />
-          {/* Footer Self-contained Card */}
           <Footer />
         </NewFlownoteSectionWrapper>
       </main>

@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center pt-4 px-4`}>
             <div className={`
         flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300
-        ${scrolled ? 'bg-app-bg/80 backdrop-blur-md shadow-sm border border-subtle-bg w-full max-w-5xl' : 'bg-transparent w-full max-w-7xl'}
+        ${scrolled ? 'bg-background/80 backdrop-blur-md shadow-sm border border-border w-full max-w-5xl' : 'bg-transparent w-full max-w-7xl'}
       `}>
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-0.5 cursor-pointer group hover:opacity-80 transition-opacity">
@@ -36,18 +36,18 @@ const Navbar: React.FC = () => {
                         alt="Flownote Logo"
                         className="w-8 h-8 object-contain"
                     />
-                    <span className="font-bold text-lg tracking-tight text-text-primary">Flownote</span>
+                    <span className="font-bold text-lg tracking-tight text-foreground">Flownote</span>
                 </Link>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-6 lg:gap-8">
-                    <Link href="#features" className="text-sm font-medium text-text-primary/70 hover:text-text-primary transition-colors">
+                    <Link href="#features" className="text-sm font-medium text-text-secondary hover:text-foreground transition-colors font-semibold">
                         機能
                     </Link>
-                    <Link href="#testimonials" className="text-sm font-medium text-text-primary/70 hover:text-text-primary transition-colors">
+                    <Link href="#testimonials" className="text-sm font-medium text-text-secondary hover:text-foreground transition-colors font-semibold">
                         お客様の声
                     </Link>
-                    <Link href="#pricing" className="text-sm font-medium text-text-primary/70 hover:text-text-primary transition-colors">
+                    <Link href="#pricing" className="text-sm font-medium text-text-secondary hover:text-foreground transition-colors font-semibold">
                         料金
                     </Link>
                 </div>
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 {/* Right Actions */}
                 <div className="hidden md:flex items-center gap-4">
                     <Link href="#download">
-                        <button className="bg-text-primary text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-text-primary/90 transition-colors shadow-lg shadow-gray-200">
+                        <button className="bg-accent-lime text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-full hover:bg-accent-lime-hover transition-all shadow-lg shadow-accent-lime/10 active:scale-95">
                             無料でダウンロード
                         </button>
                     </Link>
@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-text-primary"
+                    className="md:hidden text-foreground"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,14 +77,14 @@ const Navbar: React.FC = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-20 left-4 right-4 bg-app-bg border border-subtle-bg shadow-xl rounded-2xl p-6 flex flex-col gap-4 md:hidden"
+                        className="absolute top-20 left-4 right-4 bg-card border border-border shadow-xl rounded-2xl p-6 flex flex-col gap-4 md:hidden"
                     >
-                        <Link href="#features" className="font-medium text-text-primary" onClick={() => setMobileMenuOpen(false)}>機能</Link>
-                        <Link href="#testimonials" className="font-medium text-text-primary" onClick={() => setMobileMenuOpen(false)}>お客様の声</Link>
-                        <Link href="#pricing" className="font-medium text-text-primary" onClick={() => setMobileMenuOpen(false)}>料金</Link>
-                        <div className="h-px bg-subtle-bg my-2"></div>
+                        <Link href="#features" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>機能</Link>
+                        <Link href="#testimonials" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>お客様の声</Link>
+                        <Link href="#pricing" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>料金</Link>
+                        <div className="h-px bg-border my-2"></div>
                         <Link href="#download">
-                            <Button className="w-full bg-accent-lime text-text-primary hover:bg-accent-light">無料でダウンロード</Button>
+                            <Button className="w-full bg-accent-lime text-primary-foreground hover:bg-accent-lime-hover font-bold rounded-full">無料でダウンロード</Button>
                         </Link>
                     </motion.div>
                 )}

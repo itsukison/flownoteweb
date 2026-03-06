@@ -6,58 +6,40 @@ import Badge from './ui/Badge';
 
 const testimonials = [
     {
-        name: 'K.T.',
-        role: 'マーケティング職 / 20代',
-        avatar: 'https://picsum.photos/100/100?random=1',
-        content: "面接で頭が真っ白になることが多かったのですが、Flownoteのおかげで落ち着いて回答できるようになり、第一志望に内定しました。"
-    },
-    {
-        name: 'Y.S.',
-        role: 'エンジニア / 30代',
+        name: 'M.S.',
+        role: 'エンジニア / 20代',
         avatar: 'https://picsum.photos/100/100?random=2',
-        content: "技術面接のライブコーディング中に、思考を整理するためのヒントをリアルタイムでくれたのが本当に助かりました。"
+        content: "他の文字起こしアプリも試しましたが、Flownoteはリアルタイムでアドバイスが出る点がユニークです。たまに専門用語の認識が甘い時もありますが、面接で言葉に詰まった時のカンペとしては十分実用的でした。"
     },
     {
-        name: 'D.Y.',
-        role: '営業職 / 20代',
+        name: 'Y.K.',
+        role: '営業職 / 30代',
         avatar: 'https://picsum.photos/100/100?random=3',
-        content: "想定外の質問が来た時も、スムーズな切り返し方を提案してくれたおかげで、会話が途切れることなく盛り上がりました。"
+        content: "実際の面接中に使うのは少し勇気がいりますが、事前のロープレ相手としてはかなり優秀です。想定外の質問が来たときの返し方の語彙が増えました。"
     },
     {
-        name: 'A.S.',
-        role: '事務職 / 20代',
-        avatar: 'https://picsum.photos/100/100?random=4',
-        content: "自分の経歴書を読み込ませるだけで、ここまでパーソナライズされた模擬面接ができるなんて驚きです。練習の質が変わりました。"
-    },
-    {
-        name: 'M.T.',
-        role: 'コンサルタント / 30代',
-        avatar: 'https://picsum.photos/100/100?random=5',
-        content: "ケース面接の壁打ち相手として最適。論理の飛躍を指摘してくれるので、独りよがりな回答にならずに済みました。"
-    },
-    {
-        name: 'M.I.',
+        name: 'A.T.',
         role: 'デザイナー / 20代',
         avatar: 'https://picsum.photos/100/100?random=6',
-        content: "ポートフォリオの説明で言葉に詰まらず、自分のデザイン意図を明確に伝えるサポートをしてくれました。"
+        content: "ポートフォリオの説明って独りよがりになりがちなのですが、AIが客観的なツッコミを入れてくれるので助かりました。深夜でも気にせず壁打ちできるのが良いですね。"
     },
     {
-        name: 'S.W.',
-        role: 'プロダクトマネージャー / 30代',
-        avatar: 'https://picsum.photos/100/100?random=7',
-        content: "英語面接で、ネイティブらしい自然なフレーズを瞬時に提案してくれたのが心強かったです。自信を持って挑めました。"
+        name: 'T.N.',
+        role: 'コンサルタント / 30代',
+        avatar: 'https://picsum.photos/100/100?random=5',
+        content: "レスポンスがかなり早いので、会話のテンポを崩さずに練習できます。ただ、UIがシンプルすぎる気もするので、今後のアップデートに期待しています。"
     },
     {
-        name: 'M.K.',
-        role: '人事 / 20代',
+        name: 'R.H.',
+        role: '人事・採用 / 30代',
         avatar: 'https://picsum.photos/100/100?random=8',
-        content: "採用側の視点で見ても、Flownoteのアドバイスは非常に的確。求職者が本当に伝えるべき強みを引き出してくれています。"
+        content: "採用側の視点で見ても、Flownoteが提案する回答の構成（STAR法など）は理にかなっています。丸暗記ではなく、自分のエピソードを整理するツールとして使うのがおすすめです。"
     },
     {
-        name: 'T.K.',
-        role: '新卒 / 20代',
-        avatar: 'https://picsum.photos/100/100?random=9',
-        content: "面接練習の相手がいなくても、これさえあれば深夜でも質の高い練習ができる。就活生全員におすすめしたいです。"
+        name: 'K.I.',
+        role: 'カスタマーサクセス / 20代',
+        avatar: 'https://picsum.photos/100/100?random=1',
+        content: "Macの画面端に置いておけるので邪魔になりません。英語面接の練習にも使ってみましたが、ネイティブらしい言い回しをサッと出してくれるのは便利でした。"
     }
 ];
 
@@ -65,12 +47,12 @@ const Testimonials: React.FC = () => {
     return (
         <section id="testimonials" className="py-24 px-8 md:px-12 relative overflow-hidden">
             <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-                <Badge text="Success Stories" icon={<Star size={14} />} className="mb-6" />
+                <Badge text="Success Stories" icon={<Star size={14} />} className="mb-6 bg-card border-border" />
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-text-primary"
+                    className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-foreground"
                 >
                     ユーザーの声
                 </motion.h2>
@@ -79,7 +61,7 @@ const Testimonials: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-lg text-text-primary/60 font-medium"
+                    className="text-lg text-text-secondary font-medium"
                 >
                     多くの転職者がFlownoteを使ってキャリアアップを実現しています。
                 </motion.p>
@@ -93,24 +75,24 @@ const Testimonials: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
-                        className="bg-card-light p-8 rounded-[32px] border border-subtle-bg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full"
+                        className="bg-card p-8 rounded-[32px] border border-border shadow-sm hover:shadow-xl hover:shadow-mint-glow/5 transition-all flex flex-col justify-between h-full group"
                     >
                         <div>
                             <div className="flex items-start justify-between mb-6">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                                        <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
+                                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted">
+                                        <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-text-primary">{testimonial.name}</div>
-                                        <div className="text-xs text-text-primary/50 font-medium">{testimonial.role}</div>
+                                        <div className="font-bold text-foreground">{testimonial.name}</div>
+                                        <div className="text-xs text-text-muted font-medium">{testimonial.role}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex text-yellow-400 mb-3">
+                            <div className="flex text-accent-mint mb-3">
                                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                             </div>
-                            <p className="text-text-primary/70 leading-relaxed text-[15px] font-medium">
+                            <p className="text-text-secondary leading-relaxed text-[15px] font-medium">
                                 {testimonial.content}
                             </p>
                         </div>
@@ -119,7 +101,7 @@ const Testimonials: React.FC = () => {
             </div>
 
             {/* Subtle dot pattern background */}
-            <div className="absolute inset-0 bg-[radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none -z-10"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(var(--color-border)_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none -z-10"></div>
         </section>
     );
 };
