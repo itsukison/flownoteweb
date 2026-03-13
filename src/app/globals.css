@@ -14,20 +14,20 @@
   --color-card-foreground: #F5F5F5;
   --color-popover: #1C1C1F;
   --color-popover-foreground: #F5F5F5;
-  --color-primary: #D8F9B8;
-  /* Lime accent as primary */
+  --color-primary: #A78BFA;
+  /* Luminous Violet accent as primary */
   --color-primary-foreground: #0F0F10;
   --color-secondary: #151517;
   --color-secondary-foreground: #B8B8BE;
   --color-muted: #232327;
   --color-muted-foreground: #8A8A93;
-  --color-accent: #232327;
-  --color-accent-foreground: #F5F5F5;
+  --color-accent: #A78BFA;
+  --color-accent-foreground: #0F0F10;
   --color-destructive: #ef4444;
   --color-destructive-foreground: #F5F5F5;
   --color-border: #2A2A2E;
   --color-input: #232327;
-  --color-ring: #D8F9B8;
+  --color-ring: #A78BFA;
 
   /* Custom functional tokens */
   --color-section-bg: #151517;
@@ -37,17 +37,17 @@
   --color-text-muted: #8A8A93;
   --color-text-disabled: #5C5C63;
 
-  /* Primary Accent (Lime) */
-  --color-accent-lime: #D8F9B8;
-  --color-accent-lime-hover: #E6FFD1;
-  --color-accent-lime-pressed: #C2E6A0;
-  --color-lime-glow: rgba(216, 249, 184, 0.1);
+  /* Primary Accent (Luminous Violet) */
+  --color-accent-primary: #A78BFA;
+  --color-accent-hover: #9370F6;
+  --color-accent-pressed: #8B5CF6;
+  --color-accent-glow: rgba(196, 181, 253, 0.15);
 
   /* Feature Specific Colors */
-  --color-feature-ai-bg: #18222D;
-  --color-feature-ai-accent: #4DA3FF;
-  --color-feature-stealth-bg: #142321;
-  --color-feature-stealth-accent: #D8F9B8;
+  --color-feature-ai-bg: #181C2D;
+  --color-feature-ai-accent: #A78BFA;
+  --color-feature-stealth-bg: #1A1625;
+  --color-feature-stealth-accent: #C4B5FD;
   --color-feature-realtime-bg: #21192B;
   --color-feature-realtime-accent: #B48CFF;
 
@@ -77,8 +77,8 @@
     --popover: 240 5.3% 11.6%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 88 80% 85%;
-    /* #D8F9B8 - Lime */
+    --primary: 257 91% 77%;
+    /* #A78BFA - Luminous Violet */
     --primary-foreground: 240 5.9% 6%;
 
     --secondary: 240 5.3% 8.6%;
@@ -91,8 +91,8 @@
     --muted-foreground: 240 4.1% 56.1%;
     /* #8A8A93 */
 
-    --accent: 240 5.3% 13.9%;
-    --accent-foreground: 0 0% 96%;
+    --accent: 257 91% 77%;
+    --accent-foreground: 240 5.9% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -100,7 +100,7 @@
     --border: 240 4.8% 17.5%;
     /* #2A2A2E */
     --input: 240 5.3% 13.9%;
-    --ring: 88 80% 85%;
+    --ring: 257 91% 77%;
 
     --radius: 0.75rem;
   }
@@ -122,8 +122,8 @@
   background-image: repeating-linear-gradient(-45deg,
       transparent,
       transparent 8px,
-      rgba(216, 249, 184, 0.03) 8px,
-      rgba(216, 249, 184, 0.03) 9px);
+      rgba(167, 139, 250, 0.04) 8px,
+      rgba(167, 139, 250, 0.04) 9px);
 }
 
 /* Custom scrollbar to match the clean aesthetic */
@@ -142,5 +142,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-mint);
+  background: var(--color-accent-primary);
 }

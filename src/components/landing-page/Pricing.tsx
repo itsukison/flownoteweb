@@ -10,25 +10,25 @@ interface PricingCardProps {
     price: string;
     period: string;
     icon: React.ReactNode;
-    theme: 'white' | 'green' | 'dark';
+    theme: 'white' | 'violet' | 'dark';
     features: string[];
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, period, icon, theme, features }) => {
     const isFree = theme === 'white';
-    const isStandard = theme === 'green';
+    const isStandard = theme === 'violet';
     const isPro = theme === 'dark';
 
     const bgClass = isFree
         ? 'bg-card border-border'
         : isStandard
-            ? 'bg-feature-stealth-bg border-accent-lime/30'
+            ? 'bg-feature-stealth-bg border-accent/30'
             : 'bg-card border-feature-realtime-accent/40 shadow-[0_0_40px_rgba(180,140,255,0.05)]';
     const textClass = 'text-text-secondary';
     const titleClass = 'text-foreground';
 
     const buttonClass = isStandard
-        ? 'bg-accent-lime text-primary-foreground hover:bg-accent-lime-hover shadow-lg shadow-accent-lime/15'
+        ? 'bg-accent text-primary-foreground hover:bg-accent-hover shadow-lg shadow-accent/15'
         : isPro
             ? 'bg-feature-realtime-accent text-white hover:brightness-110 shadow-[0_8px_20px_rgba(180,140,255,0.25)]'
             : 'bg-muted border border-border text-foreground hover:bg-hover-bg';
@@ -36,16 +36,16 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
     return (
         <div className={`rounded-[32px] p-8 border ${bgClass} flex flex-col h-full hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}>
             {isStandard && (
-                <div className="absolute top-0 right-0 bg-accent-lime text-primary-foreground text-[11px] font-black px-4 py-1.5 rounded-bl-2xl shadow-sm">
+                <div className="absolute top-0 right-0 bg-accent text-primary-foreground text-[11px] font-black px-4 py-1.5 rounded-bl-2xl shadow-sm">
                     POPULAR
                 </div>
             )}
 
             <div className="flex items-center gap-4 mb-6">
-                <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center transition-colors ${isFree ? 'border-border bg-muted' : isStandard ? 'border-accent-lime/20 bg-accent-lime/5' : 'border-feature-realtime-accent/20 bg-feature-realtime-accent/5'}`}>
+                <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center transition-colors ${isFree ? 'border-border bg-muted' : isStandard ? 'border-accent/20 bg-accent/5' : 'border-feature-realtime-accent/20 bg-feature-realtime-accent/5'}`}>
                     {React.cloneElement(icon as React.ReactElement<any>, {
                         size: 20,
-                        className: isFree ? "text-text-muted" : isStandard ? "text-accent-lime" : "text-feature-realtime-accent"
+                        className: isFree ? "text-text-muted" : isStandard ? "text-accent" : "text-feature-realtime-accent"
                     })}
                 </div>
                 <div>
@@ -65,7 +65,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
                 <ul className="space-y-3">
                     {features.map((feat, i) => (
                         <li key={i} className={`flex items-start gap-3 text-sm font-medium ${textClass}`}>
-                            <CheckCircle size={18} className={isStandard ? "text-accent-lime shrink-0" : isPro ? "text-feature-realtime-accent shrink-0" : "text-text-muted shrink-0"} />
+                            <CheckCircle size={18} className={isStandard ? "text-accent shrink-0" : isPro ? "text-feature-realtime-accent shrink-0" : "text-text-muted shrink-0"} />
                             <span className="leading-tight">{feat}</span>
                         </li>
                     ))}
@@ -110,7 +110,7 @@ const Pricing: React.FC = () => {
                     price="¥750"
                     period="月"
                     icon={<Rocket />}
-                    theme="green"
+                    theme="violet"
                     features={[
                         "無制限のQ&A生成",
                         "無制限の模擬面接",

@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 {/* Right Actions */}
                 <div className="hidden md:flex items-center gap-4">
                     <Link href="#download">
-                        <button className="bg-accent-lime text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-full hover:bg-accent-lime-hover transition-all shadow-lg shadow-accent-lime/10 active:scale-95">
+                        <button className="bg-accent text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-full hover:bg-accent-hover transition-all shadow-lg shadow-accent/10 active:scale-95">
                             無料でダウンロード
                         </button>
                     </Link>
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
                         <Link href="#pricing" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>料金</Link>
                         <div className="h-px bg-border my-2"></div>
                         <Link href="#download">
-                            <Button className="w-full bg-accent-lime text-primary-foreground hover:bg-accent-lime-hover font-bold rounded-full">無料でダウンロード</Button>
+                            <Button className="w-full bg-accent text-primary-foreground hover:bg-accent-hover font-bold rounded-full">無料でダウンロード</Button>
                         </Link>
                     </motion.div>
                 )}

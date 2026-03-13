@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Apple } from 'lucide-react';
+import { Apple } from 'lucide-react';
+import LightRays from '../LightRays';
 
 const DownloadApp: React.FC = () => {
     const [downloadUrl, setDownloadUrl] = React.useState<string>('https://github.com/itsukison/flownote/releases/latest');
@@ -31,12 +31,31 @@ const DownloadApp: React.FC = () => {
     }, []);
 
     return (
-        <section id="download" className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 relative">
+        <section id="download" className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 relative overflow-hidden">
+            {/* Background LightRays */}
+            <div className="absolute inset-0 w-full h-full -z-10 bg-background">
+                <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+                    <LightRays
+                        raysOrigin="top-center"
+                        raysColor="#ffffff"
+                        raysSpeed={1}
+                        lightSpread={0.5}
+                        rayLength={3}
+                        followMouse={true}
+                        mouseInfluence={0.1}
+                        noiseAmount={0}
+                        distortion={0}
+                        className="custom-rays opacity-40"
+                        pulsating={false}
+                        fadeDistance={1}
+                        saturation={1}
+                    />
+                </div>
+                {/* Global accent glow to tie it together */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-accent-glow rounded-[100%] blur-[160px] opacity-30 pointer-events-none"></div>
+            </div>
+
             <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
-
-                {/* Subtle background glow centered behind text */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-accent-lime/20 rounded-[100%] blur-[120px] -z-10 pointer-events-none opacity-60"></div>
-
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +73,7 @@ const DownloadApp: React.FC = () => {
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <a
                             href={downloadUrl}
-                            className="group relative bg-accent-lime hover:bg-accent-lime-hover text-primary-foreground font-bold text-lg px-12 py-6 rounded-full shadow-2xl shadow-accent-lime/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 overflow-hidden"
+                            className="group relative bg-accent hover:bg-accent-hover text-primary-foreground font-bold text-lg px-12 py-6 rounded-full shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 overflow-hidden"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                             <Apple size={24} className="mb-1" />

@@ -19,7 +19,7 @@ const FeatureSplit: React.FC = () => {
     return (
         <section id="features" className="py-6 px-4 md:px-8">
             <div className="text-center mb-6">
-                <Badge text="How it works" icon={<div className="w-2 h-2 rounded-full bg-accent-lime"></div>} className="mb-4 bg-card border-border" />
+                <Badge text="How it works" icon={<div className="w-2 h-2 rounded-full bg-accent"></div>} className="mb-4 bg-card border-border" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-foreground">
                     3ステップで完璧準備
                 </h2>
@@ -57,26 +57,26 @@ const FeatureSplit: React.FC = () => {
                         <div className="h-[140px] w-full relative mt-auto">
                             {/* Custom Indicator overlay mimicking the design */}
                             <div className="absolute top-[45%] left-[45%] z-20 flex flex-col items-center">
-                                <div className="w-8 h-8 bg-accent-lime/20 rounded-full flex items-center justify-center animate-pulse">
-                                    <div className="w-4 h-4 bg-accent-lime rounded-full border-2 border-background shadow-lg"></div>
+                                <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center animate-pulse">
+                                    <div className="w-4 h-4 bg-accent rounded-full border-2 border-background shadow-lg"></div>
                                 </div>
-                                <div className="h-16 w-px bg-accent-lime/50 absolute top-4 -z-10"></div>
-                                <div className="h-16 w-px bg-accent-lime/50 absolute bottom-12 -z-10"></div>
+                                <div className="h-16 w-px bg-accent/50 absolute top-4 -z-10"></div>
+                                <div className="h-16 w-px bg-accent/50 absolute bottom-12 -z-10"></div>
                             </div>
 
                             <ResponsiveContainer width="100%" height="100%">
                                 <LineChart data={data}>
                                     <defs>
                                         <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#D8F9B8" stopOpacity={0.2} />
-                                            <stop offset="95%" stopColor="#D8F9B8" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="#A78BFA" stopOpacity={0.2} />
+                                            <stop offset="95%" stopColor="#A78BFA" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
                                     <XAxis dataKey="name" hide />
                                     <Line
                                         type="monotone"
                                         dataKey="value"
-                                        stroke="#D8F9B8"
+                                        stroke="#A78BFA"
                                         strokeWidth={3}
                                         dot={false}
                                         activeDot={false}
@@ -86,7 +86,7 @@ const FeatureSplit: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent-lime/10 rounded-full blur-2xl opacity-50"></div>
+                    <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/10 rounded-full blur-2xl opacity-50"></div>
                 </motion.div>
 
                 {/* Right Card: Writing Assistant */}
@@ -134,19 +134,20 @@ const FeatureSplit: React.FC = () => {
                         </div>
 
                         {/* Central Node: Flownote AI (Bottom Center) - Enlarged */}
+                        {/* Central Node: Flownote AI (Bottom Center) - Enlarged */}
                         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-card/95 backdrop-blur-sm p-4 pr-8 rounded-3xl shadow-xl border-t border-white/5 border-b-4 border-b-border flex items-center gap-2.5 z-20 min-w-[280px]">
-                            <div className="w-12 h-12 rounded-full bg-accent-lime flex items-center justify-center text-primary-foreground shadow-inner shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-primary-foreground shadow-inner shrink-0">
                                 <img src="/logo.png" alt="AI" className="w-6 h-6 object-contain" />
                             </div>
                             <div className="flex-1">
                                 <div className="text-base font-bold text-foreground flex items-center gap-2">
                                     Flownote AI
-                                    <span className="px-2 py-0.5 rounded-full bg-accent-lime/20 text-accent-lime text-[10px] font-extrabold uppercase tracking-wider">PRO</span>
+                                    <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent text-[10px] font-extrabold uppercase tracking-wider">PRO</span>
                                 </div>
                                 <div className="flex items-center gap-1.5 mt-1">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-lime opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-lime"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
                                     </span>
                                     <span className="text-xs text-text-muted font-medium">回答をリアルタイム生成中...</span>
                                 </div>
@@ -155,7 +156,7 @@ const FeatureSplit: React.FC = () => {
 
                         {/* Cursor Icon */}
                         <div className="absolute top-[60%] left-[60%] z-30 drop-shadow-md animate-bounce-slow opacity-80">
-                            <MousePointer2 className="text-accent-lime fill-accent-lime stroke-background" size={28} />
+                            <MousePointer2 className="text-accent fill-accent stroke-background" size={28} />
                         </div>
                     </div>
                 </motion.div>
