@@ -21,10 +21,10 @@ const FeatureSplit: React.FC = () => {
             <div className="text-center mb-6">
                 <Badge text="How it works" icon={<div className="w-2 h-2 rounded-full bg-accent"></div>} className="mb-4 bg-card border-border" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-foreground">
-                    3ステップで完璧準備
+                    3ステップで商談を加速
                 </h2>
                 <p className="text-base text-text-secondary max-w-xl mx-auto font-medium">
-                    複雑な設定は不要。インストールして起動するだけ。
+                    複雑な設定は不要。資料をアップロードして会議に入るだけ。
                 </p>
             </div>
 
@@ -38,7 +38,7 @@ const FeatureSplit: React.FC = () => {
                 >
                     <div className="mb-4 relative z-10">
                         <h3 className="text-xl font-bold mb-2 text-foreground">自動質問検出</h3>
-                        <p className="text-text-secondary leading-relaxed font-medium text-sm">会話音声から質問をリアルタイム抽出。</p>
+                        <p className="text-text-secondary leading-relaxed font-medium text-sm">会話音声から質問と論点をリアルタイム抽出。</p>
                     </div>
 
                     <div className="bg-secondary rounded-xl shadow-sm border border-border p-4 relative z-10 flex-1 flex flex-col">
@@ -51,7 +51,7 @@ const FeatureSplit: React.FC = () => {
 
                         <div className="text-center mb-4">
                             <div className="text-2xl font-bold text-foreground">85%</div>
-                            <div className="text-[10px] text-text-muted mt-0.5 font-medium">面接通過率の向上</div>
+                            <div className="text-[10px] text-text-muted mt-0.5 font-medium">回答準備時間の短縮</div>
                         </div>
 
                         <div className="h-[140px] w-full relative mt-auto">
@@ -98,8 +98,8 @@ const FeatureSplit: React.FC = () => {
                     className="bg-secondary border border-border rounded-[24px] p-5 md:p-6 relative overflow-hidden flex flex-col"
                 >
                     <div className="mb-4 relative z-10">
-                        <h3 className="text-xl font-bold mb-2 text-foreground">パーソナライズ回答</h3>
-                        <p className="text-text-secondary leading-relaxed font-medium text-sm">履歴書や経験に基づき、その場で最適解を生成。</p>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">文脈に沿った回答</h3>
+                        <p className="text-text-secondary leading-relaxed font-medium text-sm">資料と会話の流れに基づき、その場で最適解を生成。</p>
                     </div>
 
                     <div className="relative h-[200px] w-full mt-auto flex items-center justify-center">
@@ -117,8 +117,8 @@ const FeatureSplit: React.FC = () => {
                                 <Briefcase size={18} />
                             </div>
                             <div>
-                                <div className="text-sm font-bold text-foreground">面接官</div>
-                                <div className="text-[10px] text-text-muted font-medium">自己紹介を...</div>
+                                <div className="text-sm font-bold text-foreground">商談相手</div>
+                                <div className="text-[10px] text-text-muted font-medium">価格は...</div>
                             </div>
                         </div>
 
@@ -128,8 +128,8 @@ const FeatureSplit: React.FC = () => {
                                 <User size={18} />
                             </div>
                             <div>
-                                <div className="text-sm font-bold text-foreground">ユーザー</div>
-                                <div className="text-[10px] text-text-muted font-medium">志望動機は...</div>
+                                <div className="text-sm font-bold text-foreground">担当者</div>
+                                <div className="text-[10px] text-text-muted font-medium">導入効果は...</div>
                             </div>
                         </div>
 

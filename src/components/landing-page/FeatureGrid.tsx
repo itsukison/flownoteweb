@@ -9,10 +9,10 @@ const FeatureGrid: React.FC = () => {
             <div className="text-center mb-8">
                 <Badge text="Capabilities" icon={<Wand2 size={14} />} className="mb-6 bg-card border-border" />
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-foreground">
-                    AIの力で、面接をハックする
+                    AIの力で、商談の質を上げる
                 </h2>
                 <p className="text-lg text-text-secondary max-w-2xl mx-auto font-medium">
-                    最新のLLM技術と音声認識技術を駆使し、人間の能力を拡張します。
+                    ドキュメント理解と音声解析で、会話中の判断と応答を強化します。
                 </p>
             </div>
 
@@ -21,22 +21,22 @@ const FeatureGrid: React.FC = () => {
                 <div className="bg-card border border-border rounded-3xl p-6 hover:shadow-2xl hover:shadow-accent-glow/10 transition-all duration-300">
                     <div className="mb-3">
                         <h3 className="text-2xl font-bold mb-3 text-foreground">ドキュメント完全理解</h3>
-                        <p className="text-text-muted text-sm leading-relaxed font-medium">履歴書、職務経歴書、志望動機書。PDFをアップロードするだけで、AIがあなたのキャリアを完全に理解し、記憶します。</p>
+                        <p className="text-text-muted text-sm leading-relaxed font-medium">提案書、製品資料、価格表、契約条件、FAQ。アップロードするだけで、AIが内容を理解し文脈を保持します。</p>
                     </div>
 
                     <div className="bg-secondary rounded-2xl p-6 border border-border h-48 flex flex-col justify-between">
                         <div className="flex gap-3 items-start">
                             <div className="text-accent mt-1"><FileText size={20} /></div>
-                            <p className="text-sm font-medium text-text-secondary">履歴書を分析中... この役割に対する3つの主要な強みを特定しました。</p>
+                            <p className="text-sm font-medium text-text-secondary">提案資料を分析中... 想定質問に対する要点を抽出しました。</p>
                         </div>
 
                         <div className="mt-4 bg-muted rounded-xl p-3 border border-border flex items-center justify-between shadow-sm">
-                            <span className="text-xs font-semibold text-text-secondary">履歴書_v2.pdf</span>
+                            <span className="text-xs font-semibold text-text-secondary">提案資料_2025Q2.pdf</span>
                             <Upload size={16} className="text-text-muted" />
                         </div>
 
                         <div className="mt-4 text-xs text-text-muted leading-relaxed">
-                            抽出完了。Q&A生成の準備ができました。
+                            抽出完了。商談Q&Aの準備ができました。
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const FeatureGrid: React.FC = () => {
                 <div className="bg-card border border-border rounded-3xl p-6 hover:shadow-2xl hover:shadow-accent-glow/10 transition-all duration-300">
                     <div className="mb-3">
                         <h3 className="text-2xl font-bold mb-3 text-foreground">高精度音声認識</h3>
-                        <p className="text-text-muted text-sm leading-relaxed font-medium">Whisperをベースとした独自モデルにより、オンライン面接特有の音声品質でも高精度に質問をテキスト化します。</p>
+                        <p className="text-text-muted text-sm leading-relaxed font-medium">オンライン会議の音声をクリアに解析し、質問や論点をリアルタイムでテキスト化します。</p>
                     </div>
 
                     <div className="bg-secondary rounded-2xl p-4 border border-border h-48 relative overflow-hidden flex items-center justify-center">
@@ -66,7 +66,7 @@ const FeatureGrid: React.FC = () => {
                 <div className="bg-card border border-border rounded-3xl p-6 hover:shadow-2xl hover:shadow-accent-glow/10 transition-all duration-300">
                     <div className="mb-3">
                         <h3 className="text-2xl font-bold mb-3 text-foreground">自然な話し言葉生成</h3>
-                        <p className="text-text-muted text-sm leading-relaxed font-medium">書面言葉ではなく、面接の場に相応しい「話し言葉」で回答を生成。そのまま読み上げるだけで自然な会話が成立します。</p>
+                        <p className="text-text-muted text-sm leading-relaxed font-medium">書面言葉ではなく、商談の場に相応しい「話し言葉」で回答を生成。すぐに口頭で使える表現に整えます。</p>
                     </div>
 
                     <div className="bg-card rounded-2xl border border-border h-48 p-4 flex flex-col gap-3">
@@ -81,11 +81,11 @@ const FeatureGrid: React.FC = () => {
 
                         <div className="bg-muted rounded-lg p-3 text-sm text-foreground flex items-center gap-3">
                             <div className="w-4 h-4 text-text-secondary"><MessageSquare size={12} /></div>
-                            面接用
+                            法人向け提案
                         </div>
                         <div className="bg-card hover:bg-muted rounded-lg p-3 text-sm text-foreground flex items-center gap-3 border border-transparent hover:border-border transition-colors cursor-pointer">
                             <div className="w-4 h-4 text-text-secondary"><MessageSquare size={12} /></div>
-                            テレアポ用
+                            カスタマーサクセス
                         </div>
                     </div>
                 </div>

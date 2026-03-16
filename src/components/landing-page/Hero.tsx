@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
         <section className="pt-18 pb-12 px-4 flex flex-col items-center text-center overflow-hidden">
             <Badge
                 icon={<img src="/logo.png" className="w-4 h-4 object-contain" alt="logo" />}
-                text="AI Interview Assistant"
+                text="商談AIアシスタント"
                 className="mb-6 bg-card border-border"
             />
 
@@ -34,8 +34,8 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-lg text-text-secondary max-w-2xl mb-8 leading-relaxed font-medium"
             >
-                面接も、商談も、日常の会話も。<br className="md:hidden" />
-                あなたを密かに支える、次世代のリアルタイムAI
+                商談も、提案も、顧客対応も。<br className="md:hidden" />
+                会議の隣で、必要な答えを即座に引き出すリアルタイムAI
             </motion.p>
 
             <motion.div
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                         </div>
                     </div>
                     <div className="h-4 w-px bg-border hidden md:block"></div>
-                    <span>多くの就活生が利用中</span>
+                    <span>営業・CS・コンサルが利用中</span>
                     <div className="flex text-yellow-400">
                         {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                         <span className="text-foreground ml-1 font-bold">5.0</span>

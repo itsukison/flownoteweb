@@ -18,24 +18,23 @@ const russoOne = Russo_One({
 });
 
 export const metadata: Metadata = {
-  title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
-  description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。AI会議ツールとしても活用可能。無料ダウンロード開始。",
+  title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
+  description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料をアップロードして会話中の質問に即応。会議の質とスピードを高めます。",
   keywords: [
-    "AI面接",
-    "面接対策",
-    "面接カンニング",
+    "商談AI",
+    "会議アシスタント",
+    "営業支援",
+    "提案支援",
+    "顧客対応",
+    "FAQ活用",
+    "リアルタイム回答",
+    "ドキュメント理解",
     "AI会議ツール",
-    "面接練習",
-    "転職面接",
-    "就活面接",
-    "面接支援",
-    "AI面接対策",
-    "面接アプリ",
-    "面接準備",
-    "オンライン面接",
-    "面接質問",
-    "面接回答",
-    "就職活動"
+    "商談アプリ",
+    "オンライン会議",
+    "B2B営業",
+    "カスタマーサクセス",
+    "プリセールス"
   ],
   authors: [{ name: "Flownote Team" }],
   creator: "Flownote",
@@ -54,8 +53,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
-    description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。",
+    title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
+    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応します。",
     url: 'https://www.flownote.ink',
     siteName: 'Flownote',
     images: [
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Flownote AI面接対策ツール',
+        alt: 'Flownote 商談AIアシスタント',
       },
     ],
     locale: 'ja_JP',
@@ -71,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Flownote - AI面接対策ツール | 面接カンニング・AI会議サポート",
-    description: "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率85%向上。",
+    title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
+    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応します。",
     images: ['/og-image.jpg'],
     creator: '@flownote_app',
   },
@@ -95,7 +94,7 @@ export const metadata: Metadata = {
     yahoo: 'your-yahoo-verification-code',
   },
   category: 'technology',
-  classification: 'AI面接対策ツール',
+  classification: '商談AIアシスタント',
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -138,7 +137,7 @@ export default function RootLayout({
               "name": "Flownote",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Windows, macOS, Linux",
-              "description": "AI面接対策ツール。面接カンニング機能でリアルタイム回答支援。転職面接・就活面接の成功率向上。",
+              "description": "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応。",
               "url": "https://www.flownote.ink",
               "downloadUrl": "https://www.flownote.ink/download",
               "softwareVersion": "2.0",
@@ -169,7 +168,7 @@ export default function RootLayout({
                 "bestRating": "5",
                 "worstRating": "1"
               },
-              "keywords": "AI面接,面接対策,面接カンニング,AI会議ツール,転職面接,就活面接"
+              "keywords": "商談AI,会議アシスタント,営業支援,提案支援,顧客対応,リアルタイム回答"
             })
           }}
         />
@@ -184,7 +183,7 @@ export default function RootLayout({
               "name": "Flownote",
               "url": "https://www.flownote.ink",
               "logo": "https://www.flownote.ink/logo.png",
-              "description": "AI面接対策ツールの開発・提供企業",
+              "description": "商談AIアシスタントの開発・提供企業",
               "foundingDate": "2024",
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -208,26 +207,26 @@ export default function RootLayout({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "Flownoteは面接カンニングツールですか？",
+                  "name": "Flownoteは商談中に使えるAIアシスタントですか？",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Flownoteは面接対策・練習ツールです。リアルタイムで回答のヒントを表示し、面接準備をサポートします。"
+                    "text": "はい。資料をアップロードし、会話中の質問に対して要点を即時提示する商談AIアシスタントです。"
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "AI面接対策の効果はありますか？",
+                  "name": "どんな資料に対応していますか？",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、Flownoteユーザーの85%が面接通過率の向上を報告しています。AI生成の質問で効率的な対策が可能です。"
+                    "text": "提案書、製品資料、価格表、契約条件、FAQなど、商談で使うドキュメントに対応しています。"
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "オンライン面接でも使用できますか？",
+                  "name": "オンライン会議でも使用できますか？",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、ZoomやTeamsなどのオンライン面接でもご利用いただけます。AI会議ツールとしても活用可能です。"
+                    "text": "はい、ZoomやTeamsなどのオンライン会議でご利用いただけます。会議中の質問に即応できます。"
                   }
                 }
               ]

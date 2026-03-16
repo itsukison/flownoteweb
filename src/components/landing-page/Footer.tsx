@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
                             <span className="font-bold text-xl tracking-tight text-foreground">Flownote</span>
                         </div>
                         <p className="text-text-secondary leading-relaxed font-medium">
-                            AI面接対策ツールで、あなたの転職を成功に導きます。<br />
-                            見えないアシスタントが、自信と結果をもたらします。
+                            商談AIアシスタントで、会議の成果を最大化。<br />
+                            いつでも隣にいるAIが、自信と結果をもたらします。
                         </p>
                     </div>
 

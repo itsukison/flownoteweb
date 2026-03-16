@@ -93,45 +93,45 @@ const Pricing: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <PricingCard
                     title="フリー"
-                    description="お試し利用"
+                    description="個人・小規模で試す"
                     price="無料"
                     period="月"
                     icon={<User />}
                     theme="white"
                     features={[
-                        "基本質問セットの利用",
-                        "月3回までの模擬面接",
+                        "会議5回/月まで",
+                        "ドキュメント容量 1GB",
                         "基本的な回答生成"
                     ]}
                 />
                 <PricingCard
                     title="スタンダード"
-                    description="本格的な対策"
+                    description="営業・CS向け"
                     price="¥750"
                     period="月"
                     icon={<Rocket />}
                     theme="violet"
                     features={[
-                        "無制限のQ&A生成",
-                        "無制限の模擬面接",
-                        "リアルタイム音声認識",
-                        "履歴書からのカスタム対策",
-                        "優先メールサポート"
+                        "会議回数 無制限",
+                        "ドキュメント容量 10GB",
+                        "リアルタイム質問検出",
+                        "チーム共有ワークスペース",
+                        "メールサポート"
                     ]}
                 />
                 <PricingCard
                     title="プロフェッショナル"
-                    description="短期集中・重要面接"
+                    description="チーム運用"
                     price="¥2,500"
                     period="月"
                     icon={<Briefcase />}
                     theme="dark"
                     features={[
                         "スタンダードの全機能",
-                        "GPT-4oによる高度な添削",
-                        "英語面接対応",
-                        "専属キャリアコーチング",
-                        "24時間以内の優先サポート"
+                        "チーム管理・権限設定",
+                        "ワークスペース別の資料管理",
+                        "専任オンボーディング",
+                        "優先サポート"
                     ]}
                 />
             </div>

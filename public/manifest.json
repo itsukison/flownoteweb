@@ -1,7 +1,7 @@
 {
-  "name": "Flownote - AI面接対策ツール",
+  "name": "Flownote - 商談AIアシスタント",
   "short_name": "Flownote",
-  "description": "AI面接対策の決定版！面接カンニング機能でリアルタイム回答支援。",
+  "description": "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F7EE",
@@ -21,7 +21,7 @@
       "purpose": "maskable any"
     }
   ],
-  "categories": ["business", "productivity", "education"],
+  "categories": ["business", "productivity", "communication"],
   "lang": "ja",
   "dir": "ltr"
 }

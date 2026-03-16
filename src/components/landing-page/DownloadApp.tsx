@@ -38,17 +38,17 @@ const DownloadApp: React.FC = () => {
                     <LightRays
                         raysOrigin="top-center"
                         raysColor="#ffffff"
-                        raysSpeed={1}
-                        lightSpread={0.5}
-                        rayLength={3}
+                        raysSpeed={1.2}
+                        lightSpread={0.35}
+                        rayLength={3.6}
                         followMouse={true}
                         mouseInfluence={0.1}
-                        noiseAmount={0}
-                        distortion={0}
-                        className="custom-rays opacity-40"
+                        noiseAmount={0.05}
+                        distortion={0.1}
+                        className="custom-rays opacity-85 mix-blend-screen"
                         pulsating={false}
-                        fadeDistance={1}
-                        saturation={1}
+                        fadeDistance={1.35}
+                        saturation={1.2}
                     />
                 </div>
                 {/* Global accent glow to tie it together */}
@@ -66,8 +66,8 @@ const DownloadApp: React.FC = () => {
                         アプリをダウンロード
                     </h2>
                     <p className="text-xl md:text-xl text-text-secondary max-w-2xl mx-auto font-medium mb-12 leading-relaxed">
-                        面接の不安を自信に変える、最高のパートナー。<br />
-                        あなたのキャリアを、ここからアップデートしましょう。
+                        商談の不安を確信に変える、最高のパートナー。<br />
+                        会議の隣にいるAIを、今日から。
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
