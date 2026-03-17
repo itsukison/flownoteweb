@@ -1,12 +1,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Download, ArrowRight, Box, Circle, Mic, Video } from 'lucide-react';
+import { Star, Download, ArrowRight, Box, Circle, Mic, Video, Apple, Monitor } from 'lucide-react';
 import Badge from './ui/Badge';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
+import { useLatestRelease } from '@/hooks/useLatestRelease';
 
 const Hero: React.FC = () => {
+    const { downloadUrl, os } = useLatestRelease();
+    const isWindows = os === 'windows';
 
     return (
         <section className="pt-18 pb-12 px-4 flex flex-col items-center text-center overflow-hidden">
@@ -45,11 +48,12 @@ const Hero: React.FC = () => {
                 className="flex flex-col items-center gap-6 mb-16"
             >
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="#download">
+                    <a href={downloadUrl}>
                         <button className="bg-accent hover:bg-accent-hover active:bg-accent-pressed text-primary-foreground font-bold text-base px-6 py-3 rounded-full shadow-lg shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
-                            <Download size={20} /> 無料で始める
+                            {isWindows ? <Monitor size={20} /> : <Apple size={20} />}
+                            {isWindows ? 'Windows版をダウンロード' : 'Mac版をダウンロード'}
                         </button>
-                    </Link>
+                    </a>
                     <Link href="/tutorial">
                         <button className="bg-card hover:bg-muted text-foreground font-bold text-base px-6 py-3 rounded-full shadow-sm border border-border transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                             <ArrowRight size={20} /> デモを見る

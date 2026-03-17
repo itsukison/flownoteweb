@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Apple, Monitor } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -10,10 +10,14 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLatestRelease } from '@/hooks/useLatestRelease';
 
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { downloadUrl, os } = useLatestRelease();
+
+    const isWindows = os === 'windows';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,11 +58,12 @@ const Navbar: React.FC = () => {
 
                 {/* Right Actions */}
                 <div className="hidden md:flex items-center gap-4">
-                    <Link href="#download">
-                        <button className="bg-accent text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-full hover:bg-accent-hover transition-all shadow-lg shadow-accent/10 active:scale-95">
-                            無料でダウンロード
+                    <a href={downloadUrl}>
+                        <button className="bg-accent text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-full hover:bg-accent-hover transition-all shadow-lg shadow-accent/10 active:scale-95 flex items-center gap-2">
+                            {isWindows ? <Monitor size={16} /> : <Apple size={16} />}
+                            {isWindows ? 'Windows版をダウンロード' : 'Mac版をダウンロード'}
                         </button>
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -83,9 +88,12 @@ const Navbar: React.FC = () => {
                         <Link href="#testimonials" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>お客様の声</Link>
                         <Link href="#pricing" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>料金</Link>
                         <div className="h-px bg-border my-2"></div>
-                        <Link href="#download">
-                            <Button className="w-full bg-accent text-primary-foreground hover:bg-accent-hover font-bold rounded-full">無料でダウンロード</Button>
-                        </Link>
+                        <a href={downloadUrl} onClick={() => setMobileMenuOpen(false)}>
+                            <Button className="w-full bg-accent text-primary-foreground hover:bg-accent-hover font-bold rounded-full flex items-center gap-2">
+                                {isWindows ? <Monitor size={18} /> : <Apple size={18} />}
+                                {isWindows ? 'Windows版をダウンロード' : 'Mac版をダウンロード'}
+                            </Button>
+                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>

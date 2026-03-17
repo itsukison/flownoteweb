@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
                         <div className="flex flex-col gap-4">
                             <h4 className="font-bold text-foreground">ダウンロード</h4>
                             <Link href="#download" className="text-text-secondary hover:text-foreground transition-colors font-medium">Mac版</Link>
-                            <Link href="#download" className="text-text-secondary hover:text-foreground transition-colors font-medium">Windows版 (準備中)</Link>
+                            <Link href="#download" className="text-text-secondary hover:text-foreground transition-colors font-medium">Windows版</Link>
                         </div>
                         <div className="flex flex-col gap-4">
                             <h4 className="font-bold text-foreground">サポート</h4>
