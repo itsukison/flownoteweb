@@ -17,13 +17,13 @@ const data = [
 
 const FeatureSplit: React.FC = () => {
     return (
-        <section id="features" className="py-6 px-4 md:px-8">
+        <section id="features" className="py-8 sm:py-10 px-6 sm:px-8 md:px-8">
             <div className="text-center mb-6">
                 <Badge text="How it works" icon={<div className="w-2 h-2 rounded-full bg-accent"></div>} className="mb-4 bg-card border-border" />
-                <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-foreground">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 tracking-tight text-foreground">
                     3ステップで商談を加速
                 </h2>
-                <p className="text-base text-text-secondary max-w-xl mx-auto font-medium">
+                <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto font-medium">
                     複雑な設定は不要。資料をアップロードして会議に入るだけ。
                 </p>
             </div>
@@ -37,7 +37,7 @@ const FeatureSplit: React.FC = () => {
                     className="bg-card border border-border rounded-[24px] p-5 md:p-6 relative overflow-hidden group flex flex-col"
                 >
                     <div className="mb-4 relative z-10">
-                        <h3 className="text-xl font-bold mb-2 text-foreground">自動質問検出</h3>
+                        <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">自動質問検出</h3>
                         <p className="text-text-secondary leading-relaxed font-medium text-sm">会話音声から質問と論点をリアルタイム抽出。</p>
                     </div>
 
@@ -98,11 +98,11 @@ const FeatureSplit: React.FC = () => {
                     className="bg-secondary border border-border rounded-[24px] p-5 md:p-6 relative overflow-hidden flex flex-col"
                 >
                     <div className="mb-4 relative z-10">
-                        <h3 className="text-xl font-bold mb-2 text-foreground">文脈に沿った回答</h3>
+                        <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">文脈に沿った回答</h3>
                         <p className="text-text-secondary leading-relaxed font-medium text-sm">資料と会話の流れに基づき、その場で最適解を生成。</p>
                     </div>
 
-                    <div className="relative h-[200px] w-full mt-auto flex items-center justify-center">
+                    <div className="relative h-[200px] w-full mt-auto items-center justify-center hidden lg:flex">
                         {/* Connection Lines (SVG) */}
                         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40">
                             {/* Left Curve (Interviewer) */}
@@ -157,6 +157,45 @@ const FeatureSplit: React.FC = () => {
                         {/* Cursor Icon */}
                         <div className="absolute top-[60%] left-[60%] z-30 drop-shadow-md animate-bounce-slow opacity-80">
                             <MousePointer2 className="text-accent fill-accent stroke-background" size={28} />
+                        </div>
+                    </div>
+
+                    <div className="lg:hidden w-full mt-4 flex flex-col gap-3">
+                        <div className="bg-card border border-border rounded-2xl p-3 flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center text-text-secondary">
+                                <Briefcase size={16} />
+                            </div>
+                            <div>
+                                <div className="text-sm font-bold text-foreground">商談相手</div>
+                                <div className="text-[11px] text-text-muted font-medium">価格は...</div>
+                            </div>
+                        </div>
+                        <div className="bg-card border border-border rounded-2xl p-3 flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center text-text-secondary">
+                                <User size={16} />
+                            </div>
+                            <div>
+                                <div className="text-sm font-bold text-foreground">担当者</div>
+                                <div className="text-[11px] text-text-muted font-medium">導入効果は...</div>
+                            </div>
+                        </div>
+                        <div className="bg-card border border-border rounded-2xl p-3 flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary-foreground shadow-inner shrink-0">
+                                <img src="/logo.png" alt="AI" className="w-5 h-5 object-contain" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="text-sm font-bold text-foreground flex items-center gap-2">
+                                    Flownote AI
+                                    <span className="px-2 py-0.5 rounded-full bg-accent/20 text-accent text-[10px] font-extrabold uppercase tracking-wider">PRO</span>
+                                </div>
+                                <div className="flex items-center gap-1.5 mt-1">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                                    </span>
+                                    <span className="text-[11px] text-text-muted font-medium">回答をリアルタイム生成中...</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.div>

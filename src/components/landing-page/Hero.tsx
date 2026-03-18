@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
     const isWindows = os === 'windows';
 
     return (
-        <section className="pt-18 pb-12 px-4 flex flex-col items-center text-center overflow-hidden">
+        <section className="pt-12 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-8 flex flex-col items-center text-center overflow-hidden">
             <Badge
                 icon={<img src="/logo.png" className="w-4 h-4 object-contain" alt="logo" />}
                 text="商談AIアシスタント"
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl md:text-7xl lg:text-7xl font-black tracking-tight text-foreground mb-6 leading-[1.0]"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-black tracking-tight text-foreground mb-5 sm:mb-6 leading-[1.0]"
             >
                 見えない会話アシスト <br />
                 <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg md:text-lg text-text-secondary max-w-2xl mb-8 leading-relaxed font-medium"
+                className="text-base sm:text-lg md:text-lg text-text-secondary max-w-2xl mb-6 sm:mb-8 leading-relaxed font-medium"
             >
                 商談も、提案も、顧客対応も。<br className="md:hidden" />
                 会議の隣で、必要な答えを即座に引き出すリアルタイムAI
@@ -45,23 +45,23 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col items-center gap-6 mb-16"
+                className="flex flex-col items-center gap-5 sm:gap-6 mb-12 sm:mb-16"
             >
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a href={downloadUrl}>
-                        <button className="bg-accent hover:bg-accent-hover active:bg-accent-pressed text-primary-foreground font-bold text-base px-6 py-3 rounded-full shadow-lg shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                        <button className="bg-accent hover:bg-accent-hover active:bg-accent-pressed text-primary-foreground font-bold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                             {isWindows ? <Monitor size={20} /> : <Apple size={20} />}
                             {isWindows ? 'Windows版をダウンロード' : 'Mac版をダウンロード'}
                         </button>
                     </a>
                     <Link href="/tutorial">
-                        <button className="bg-card hover:bg-muted text-foreground font-bold text-base px-6 py-3 rounded-full shadow-sm border border-border transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                        <button className="bg-card hover:bg-muted text-foreground font-bold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm border border-border transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                             <ArrowRight size={20} /> デモを見る
                         </button>
                     </Link>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center gap-4 text-sm font-medium text-foreground bg-card px-6 py-2 rounded-full border border-border shadow-sm">
+                <div className="flex flex-col md:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium text-foreground bg-card px-5 sm:px-6 md:px-6 py-3 rounded-full border border-border shadow-sm w-full max-w-[360px] md:w-auto md:max-w-none mx-auto text-center md:text-left">
                     <div className="flex -space-x-2">
                         {[1, 2, 3].map((i) => (
                             <div
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent blur-3xl -z-10 rounded-full opacity-50"></div>
 
-                <div className="rounded-3xl shadow-2xl border border-border overflow-hidden h-[400px] md:h-[600px] relative bg-gray-950">
+                <div className="rounded-3xl shadow-2xl border border-border overflow-hidden h-[240px] sm:h-[320px] md:h-[600px] relative bg-gray-950">
                     <video
                         src="/demo.mp4"
                         autoPlay

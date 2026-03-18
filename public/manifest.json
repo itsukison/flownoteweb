@@ -4,8 +4,8 @@
   "description": "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F7F7EE",
-  "theme_color": "#013220",
+  "background_color": "#0F0F10",
+  "theme_color": "#0F0F10",
   "orientation": "portrait-primary",
   "icons": [
     {

@@ -34,7 +34,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
             : 'bg-muted border border-border text-foreground hover:bg-hover-bg';
 
     return (
-        <div className={`rounded-[32px] p-8 border ${bgClass} flex flex-col h-full hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}>
+        <div className={`rounded-[32px] p-6 sm:p-8 border ${bgClass} flex flex-col h-full hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}>
             {isStandard && (
                 <div className="absolute top-0 right-0 bg-accent text-primary-foreground text-[11px] font-black px-4 py-1.5 rounded-bl-2xl shadow-sm">
                     POPULAR
@@ -49,13 +49,13 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
                     })}
                 </div>
                 <div>
-                    <h3 className={`text-xl font-bold ${titleClass}`}>{title}</h3>
+                    <h3 className={`text-lg sm:text-xl font-bold ${titleClass}`}>{title}</h3>
                     <p className={`text-xs ${textClass} font-medium mt-1`}>{description}</p>
                 </div>
             </div>
 
             <div className="mb-6 flex items-baseline gap-1">
-                <span className={`text-4xl font-bold tracking-tight ${titleClass}`}>{price}</span>
+                <span className={`text-3xl sm:text-4xl font-bold tracking-tight ${titleClass}`}>{price}</span>
                 <span className={`text-sm ${textClass}`}> / {period}</span>
             </div>
 
@@ -64,7 +64,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
             <div className="flex-1 mb-8">
                 <ul className="space-y-3">
                     {features.map((feat, i) => (
-                        <li key={i} className={`flex items-start gap-3 text-sm font-medium ${textClass}`}>
+                        <li key={i} className={`flex items-start gap-3 text-xs sm:text-sm font-medium ${textClass}`}>
                             <CheckCircle size={18} className={isStandard ? "text-accent shrink-0" : isPro ? "text-feature-realtime-accent shrink-0" : "text-text-muted shrink-0"} />
                             <span className="leading-tight">{feat}</span>
                         </li>
@@ -73,7 +73,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
             </div>
 
             <Link href="/subscription" className="w-full mt-auto">
-                <button className={`w-full py-4 rounded-full font-bold text-sm transition-all transform active:scale-[0.98] ${buttonClass}`}>
+                <button className={`w-full py-3 sm:py-4 rounded-full font-bold text-sm transition-all transform active:scale-[0.98] ${buttonClass}`}>
                     今すぐ始める
                 </button>
             </Link>
@@ -83,11 +83,11 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
 
 const Pricing: React.FC = () => {
     return (
-        <section id="pricing" className="py-20 max-w-7xl mx-auto px-4 md:px-8">
-            <div className="text-center mb-12">
+        <section id="pricing" className="py-16 sm:py-20 md:py-20 max-w-7xl mx-auto px-6 sm:px-8 md:px-8">
+            <div className="text-center mb-10 sm:mb-12">
                 <Badge text="Pricing" icon={<Rocket size={14} />} className="mb-6 bg-card border-border" />
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-foreground leading-tight">シンプルな料金プラン</h2>
-                <p className="text-text-secondary max-w-2xl mx-auto font-medium text-lg">長期利用がお得な年額プランをご用意しました。</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight text-foreground leading-tight">シンプルな料金プラン</h2>
+                <p className="text-text-secondary max-w-2xl mx-auto font-medium text-base sm:text-lg">長期利用がお得な年額プランをご用意しました。</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">

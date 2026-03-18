@@ -118,12 +118,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="canonical" href="https://www.flownote.ink" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#013220" />
+        <meta name="theme-color" content="#0F0F10" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Flownote" />
         <meta name="application-name" content="Flownote" />
-        <meta name="msapplication-TileColor" content="#013220" />
+        <meta name="msapplication-TileColor" content="#0F0F10" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <link rel="manifest" href="/manifest.json" />
 

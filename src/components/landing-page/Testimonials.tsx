@@ -45,14 +45,14 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
     return (
-        <section id="testimonials" className="py-24 px-8 md:px-12 relative overflow-hidden">
-            <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+        <section id="testimonials" className="py-16 sm:py-20 md:py-24 px-6 sm:px-8 md:px-12 relative overflow-hidden">
+            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 relative z-10">
                 <Badge text="Success Stories" icon={<Star size={14} />} className="mb-6 bg-card border-border" />
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-foreground"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-5 sm:mb-6 tracking-tight text-foreground"
                 >
                     ユーザーの声
                 </motion.h2>
@@ -61,7 +61,7 @@ const Testimonials: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-lg text-text-secondary font-medium"
+                    className="text-base sm:text-lg text-text-secondary font-medium"
                 >
                     多くのB2BチームがFlownoteで商談力を高めています。
                 </motion.p>
@@ -75,7 +75,7 @@ const Testimonials: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
-                        className="bg-card p-8 rounded-[32px] border border-border shadow-sm hover:shadow-xl hover:shadow-mint-glow/5 transition-all flex flex-col justify-between h-full group"
+                        className="bg-card p-6 sm:p-8 rounded-[32px] border border-border shadow-sm hover:shadow-xl hover:shadow-mint-glow/5 transition-all flex flex-col justify-between h-full group"
                     >
                         <div>
                             <div className="flex items-start justify-between mb-6">
@@ -92,7 +92,7 @@ const Testimonials: React.FC = () => {
                             <div className="flex text-accent-mint mb-3">
                                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                             </div>
-                            <p className="text-text-secondary leading-relaxed text-[15px] font-medium">
+                            <p className="text-text-secondary leading-relaxed text-sm sm:text-[15px] font-medium">
                                 {testimonial.content}
                             </p>
                         </div>

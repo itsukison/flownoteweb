@@ -10,7 +10,7 @@ const DownloadApp: React.FC = () => {
     const isWindows = os === 'windows';
 
     return (
-        <section id="download" className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 relative overflow-hidden">
+        <section id="download" className="min-h-0 md:min-h-[calc(100vh-80px)] flex items-center justify-center px-6 sm:px-8 relative overflow-hidden">
             {/* Background LightRays */}
             <div className="absolute inset-0 w-full h-full -z-10 bg-background">
                 <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
@@ -34,17 +34,17 @@ const DownloadApp: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-accent-glow rounded-[100%] blur-[160px] opacity-30 pointer-events-none"></div>
             </div>
 
-            <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
+            <div className="max-w-4xl mx-auto text-center relative z-10 py-12 sm:py-16 md:py-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-foreground leading-[1.1]">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 tracking-tight text-foreground leading-[1.1]">
                         アプリをダウンロード
                     </h2>
-                    <p className="text-xl md:text-xl text-text-secondary max-w-2xl mx-auto font-medium mb-12 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl mx-auto font-medium mb-8 sm:mb-12 leading-relaxed">
                         商談の不安を確信に変える、最高のパートナー。<br />
                         会議の隣にいるAIを、今日から。
                     </p>
@@ -52,7 +52,7 @@ const DownloadApp: React.FC = () => {
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <a
                             href={downloadUrl}
-                            className={`group relative bg-accent hover:bg-accent-hover text-primary-foreground font-bold text-lg px-12 py-6 rounded-full shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 overflow-hidden ${isLoading ? 'opacity-70 pointer-events-none' : ''}`}
+                            className={`group relative bg-accent hover:bg-accent-hover text-primary-foreground font-bold text-base sm:text-lg px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full shadow-2xl shadow-accent/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 overflow-hidden ${isLoading ? 'opacity-70 pointer-events-none' : ''}`}
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                             {isWindows ? (

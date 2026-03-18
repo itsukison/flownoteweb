@@ -11,9 +11,9 @@ const Stats: React.FC = () => {
     ];
 
     return (
-        <section className="py-12 bg-section-bg border-y border-border">
-            <div className="px-8 md:px-12 max-w-7xl mx-auto">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <section className="py-10 sm:py-12 bg-section-bg border-y border-border">
+            <div className="px-6 sm:px-8 md:px-12 max-w-7xl mx-auto">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-8">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
@@ -23,8 +23,8 @@ const Stats: React.FC = () => {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className="flex flex-col items-center md:items-start text-center md:text-left"
                         >
-                            <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">{stat.value}</h3>
-                            <p className="text-text-secondary font-semibold text-base md:text-lg">{stat.label}</p>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">{stat.value}</h3>
+                            <p className="text-text-secondary font-semibold text-sm sm:text-base md:text-lg">{stat.label}</p>
                         </motion.div>
                     ))}
                 </div>

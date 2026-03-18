@@ -6,22 +6,22 @@ import { Trophy } from 'lucide-react';
 
 const FeatureTilted: React.FC = () => {
     return (
-        <section className="py-16 max-w-7xl mx-auto px-4 overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-6 sm:px-8 overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                 {/* Text Content */}
-                <div className="max-w-xl ml-6">
+                <div className="max-w-xl mx-auto lg:mx-0 lg:ml-6 text-center lg:text-left">
                     <Badge text="Features" icon={<Trophy size={14} />} className="mb-6 bg-card border-border" />
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground leading-[1.1]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 sm:mb-6 tracking-tight text-foreground leading-[1.1]">
                         商談の成果のために<br />
                         設計された機能
                     </h2>
-                    <p className="text-lg text-text-secondary leading-relaxed font-medium">
+                    <p className="text-base sm:text-lg text-text-secondary leading-relaxed font-medium">
                         商談準備から本番、そして振り返りまで。Flownoteは一貫してチームの成果を最大化するために作られています。
                     </p>
                 </div>
 
                 {/* Floating Cards Animation */}
-                <div className="relative h-[550px] flex items-center justify-center -mt-20">
+                <div className="relative h-[550px] items-center justify-center -mt-20 hidden lg:flex">
                     {/* Card 1: Q&A Generation (Blue Accent) */}
                     <motion.div
                         initial={{ rotate: 0, y: 100, opacity: 0 }}
@@ -73,6 +73,36 @@ const FeatureTilted: React.FC = () => {
                             会議音声をリアルタイム解析。質問に即応できる回答を提示。
                         </p>
                     </motion.div>
+                </div>
+
+                <div className="lg:hidden flex flex-col gap-4 mt-6">
+                    <div className="bg-feature-ai-bg border border-feature-ai-accent/20 p-5 rounded-3xl shadow-xl">
+                        <div className="flex justify-between items-start mb-3">
+                            <h3 className="text-lg font-bold text-foreground">商談Q&A生成</h3>
+                            <div className="w-3 h-3 rounded-full bg-feature-ai-accent shadow-[0_0_10px_var(--color-feature-ai-accent)]"></div>
+                        </div>
+                        <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                            過去の提案書・FAQから、想定質問と回答の要点を自動生成。
+                        </p>
+                    </div>
+                    <div className="bg-feature-stealth-bg border border-accent/20 p-5 rounded-3xl shadow-xl">
+                        <div className="flex justify-between items-start mb-3">
+                            <h3 className="text-lg font-bold text-foreground">フローティングウィンドウ</h3>
+                            <div className="w-3 h-3 rounded-full bg-accent shadow-[0_0_10px_var(--color-accent-primary)]"></div>
+                        </div>
+                        <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                            会議の隅に常駐する小さなウィンドウ。必要なときだけ開いて確認。
+                        </p>
+                    </div>
+                    <div className="bg-feature-realtime-bg border border-feature-realtime-accent/20 p-5 rounded-3xl shadow-xl">
+                        <div className="flex justify-between items-start mb-3">
+                            <h3 className="text-lg font-bold text-foreground">リアルタイム提案支援</h3>
+                            <div className="w-3 h-3 rounded-full bg-feature-realtime-accent shadow-[0_0_10px_var(--color-feature-realtime-accent)]"></div>
+                        </div>
+                        <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                            会議音声をリアルタイム解析。質問に即応できる回答を提示。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
