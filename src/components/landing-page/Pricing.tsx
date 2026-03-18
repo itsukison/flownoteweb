@@ -33,6 +33,8 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
             ? 'bg-feature-realtime-accent text-white hover:brightness-110 shadow-[0_8px_20px_rgba(180,140,255,0.25)]'
             : 'bg-muted border border-border text-foreground hover:bg-hover-bg';
 
+    const showPeriod = Boolean(period) && price !== '要相談';
+
     return (
         <div className={`rounded-[32px] p-6 sm:p-8 border ${bgClass} flex flex-col h-full hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}>
             {isStandard && (
@@ -56,7 +58,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, pe
 
             <div className="mb-6 flex items-baseline gap-1">
                 <span className={`text-3xl sm:text-4xl font-bold tracking-tight ${titleClass}`}>{price}</span>
-                <span className={`text-sm ${textClass}`}> / {period}</span>
+                {showPeriod ? <span className={`text-sm ${textClass}`}> / {period}</span> : null}
             </div>
 
             <div className="border-b border-border mb-6"></div>
@@ -107,7 +109,7 @@ const Pricing: React.FC = () => {
                 <PricingCard
                     title="スタンダード"
                     description="営業・CS向け"
-                    price="¥750"
+                    price="¥1,500"
                     period="月"
                     icon={<Rocket />}
                     theme="violet"
@@ -120,10 +122,10 @@ const Pricing: React.FC = () => {
                     ]}
                 />
                 <PricingCard
-                    title="プロフェッショナル"
-                    description="チーム運用"
-                    price="¥2,500"
-                    period="月"
+                    title="エンタープライズ"
+                    description="大規模チーム向け"
+                    price="要相談"
+                    period=""
                     icon={<Briefcase />}
                     theme="dark"
                     features={[
