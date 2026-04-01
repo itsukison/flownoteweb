@@ -3,9 +3,7 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    serverComponentsExternalPackages: ['pdf2json'],
-  },
+  serverExternalPackages: ['pdf2json'],
   turbopack: {
     root: path.join(process.cwd())
   },

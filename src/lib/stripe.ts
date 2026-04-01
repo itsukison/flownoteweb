@@ -1,12 +1,19 @@
 import Stripe from 'stripe'
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing STRIPE_SECRET_KEY')
-}
+let cachedStripe: Stripe | null = null
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2025-03-31.basil',
-})
+export function getStripe(): Stripe {
+  if (cachedStripe) return cachedStripe
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('Missing STRIPE_SECRET_KEY')
+  }
+
+  cachedStripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2025-08-27.basil',
+  })
+
+  return cachedStripe
+}
 
 export const STRIPE_PRICES = {
   PRO: 'price_1THIu2CbJdvYgTCb7pWJw1LQ',

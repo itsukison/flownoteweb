@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function SubscriptionSuccess() {
+function SubscriptionSuccessContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
 
@@ -34,5 +34,21 @@ export default function SubscriptionSuccess() {
         </p>
       </div>
     </div>
+  )
+}
+
+export default function SubscriptionSuccess() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-950 flex items-center justify-center p-6">
+          <div className="max-w-md w-full bg-gray-900 rounded-2xl p-8 text-center border border-gray-800">
+            <p className="text-gray-400">読み込み中…</p>
+          </div>
+        </div>
+      }
+    >
+      <SubscriptionSuccessContent />
+    </Suspense>
   )
 }

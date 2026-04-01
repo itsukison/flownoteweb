@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-admin'
-import { stripe, STRIPE_PRICES, BUSINESS_MIN_SEATS } from '@/lib/stripe'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { getStripe, STRIPE_PRICES, BUSINESS_MIN_SEATS } from '@/lib/stripe'
 
 export async function POST(req: NextRequest) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
+    const stripe = getStripe()
     const { checkout_token } = await req.json()
     if (!checkout_token) {
       return NextResponse.json({ error: 'Missing checkout_token' }, { status: 400 })

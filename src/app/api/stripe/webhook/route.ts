@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-admin'
-import { stripe, STRIPE_PRICES, BUSINESS_MIN_SEATS } from '@/lib/stripe'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { getStripe, STRIPE_PRICES, BUSINESS_MIN_SEATS } from '@/lib/stripe'
 import Stripe from 'stripe'
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
@@ -15,9 +15,47 @@ function generateActivationCode(): string {
   return code
 }
 
+function getSubscriptionPeriod(subscription: Stripe.Subscription): {
+  periodStart: string
+  periodEnd: string
+} | null {
+  const items = subscription.items?.data ?? []
+  if (items.length === 0) {
+    console.error('Subscription has no items; cannot determine period:', subscription.id)
+    return null
+  }
+
+  let start = items[0].current_period_start
+  let end = items[0].current_period_end
+  for (const item of items) {
+    if (item.current_period_start < start) start = item.current_period_start
+    if (item.current_period_end > end) end = item.current_period_end
+  }
+
+  return {
+    periodStart: new Date(start * 1000).toISOString(),
+    periodEnd: new Date(end * 1000).toISOString(),
+  }
+}
+
+function getInvoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
+  const parentSub = invoice.parent?.subscription_details?.subscription
+  if (parentSub) {
+    return typeof parentSub === 'string' ? parentSub : parentSub.id
+  }
+
+  const legacy = (invoice as { subscription?: string | Stripe.Subscription }).subscription
+  if (legacy) {
+    return typeof legacy === 'string' ? legacy : legacy.id
+  }
+
+  return null
+}
+
 export async function POST(req: NextRequest) {
   const body = await req.text()
   const sig = req.headers.get('stripe-signature')!
+  const stripe = getStripe()
 
   let event: Stripe.Event
   try {
@@ -53,6 +91,7 @@ export async function POST(req: NextRequest) {
 async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   if (session.mode !== 'subscription' || !session.subscription) return
 
+  const stripe = getStripe()
   const subscription = await stripe.subscriptions.retrieve(session.subscription as string)
   const metadata = subscription.metadata
   const userId = metadata.supabase_user_id
@@ -63,8 +102,9 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     return
   }
 
-  const periodStart = new Date(subscription.current_period_start * 1000).toISOString()
-  const periodEnd = new Date(subscription.current_period_end * 1000).toISOString()
+  const supabaseAdmin = getSupabaseAdmin()
+  const period = getSubscriptionPeriod(subscription)
+  if (!period) return
 
   // Update user profile
   await supabaseAdmin
@@ -72,8 +112,8 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     .update({
       plan,
       subscription_status: 'active',
-      current_period_start: periodStart,
-      current_period_end: periodEnd,
+      current_period_start: period.periodStart,
+      current_period_end: period.periodEnd,
       current_period_usage: 0,
     })
     .eq('id', userId)
@@ -84,6 +124,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 }
 
 async function setupBusinessOrg(userId: string, subscription: Stripe.Subscription) {
+  const supabaseAdmin = getSupabaseAdmin()
   const seats = parseInt(subscription.metadata.seats || String(BUSINESS_MIN_SEATS))
 
   // Get user email for org name
@@ -140,8 +181,9 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const plan = subscription.metadata.plan as string
   if (!userId) return
 
-  const periodStart = new Date(subscription.current_period_start * 1000).toISOString()
-  const periodEnd = new Date(subscription.current_period_end * 1000).toISOString()
+  const supabaseAdmin = getSupabaseAdmin()
+  const period = getSubscriptionPeriod(subscription)
+  if (!period) return
 
   const status = subscription.status === 'active' ? 'active'
     : subscription.status === 'past_due' ? 'past_due'
@@ -152,8 +194,8 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
     .from('profiles')
     .update({
       subscription_status: status,
-      current_period_start: periodStart,
-      current_period_end: periodEnd,
+      current_period_start: period.periodStart,
+      current_period_end: period.periodEnd,
     })
     .eq('id', userId)
 
@@ -178,7 +220,9 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   const userId = subscription.metadata.supabase_user_id
   if (!userId) return
 
-  const periodEnd = new Date(subscription.current_period_end * 1000).toISOString()
+  const supabaseAdmin = getSupabaseAdmin()
+  const period = getSubscriptionPeriod(subscription)
+  if (!period) return
 
   // Set canceled — access continues until period end
   // A cron job will revert to 'free' after period_end passes
@@ -186,7 +230,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
     .from('profiles')
     .update({
       subscription_status: 'canceled',
-      current_period_end: periodEnd,
+      current_period_end: period.periodEnd,
     })
     .eq('id', userId)
 
@@ -208,20 +252,23 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
   // Only handle subscription invoices (not the first one — that's handled by checkout.session.completed)
-  if (!invoice.subscription || invoice.billing_reason === 'subscription_create') return
+  const subscriptionId = getInvoiceSubscriptionId(invoice)
+  if (!subscriptionId || invoice.billing_reason === 'subscription_create') return
 
-  const subscription = await stripe.subscriptions.retrieve(invoice.subscription as string)
+  const stripe = getStripe()
+  const subscription = await stripe.subscriptions.retrieve(subscriptionId)
   const userId = subscription.metadata.supabase_user_id
   if (!userId) return
 
-  const periodStart = new Date(subscription.current_period_start * 1000).toISOString()
-  const periodEnd = new Date(subscription.current_period_end * 1000).toISOString()
+  const supabaseAdmin = getSupabaseAdmin()
+  const period = getSubscriptionPeriod(subscription)
+  if (!period) return
 
   // Reset usage for the new billing period
   await supabaseAdmin.rpc('reset_period_usage', {
     p_user_id: userId,
-    p_period_start: periodStart,
-    p_period_end: periodEnd,
+    p_period_start: period.periodStart,
+    p_period_end: period.periodEnd,
   })
 
   // For business plans, reset all org members' period usage
@@ -243,8 +290,8 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
         for (const member of members) {
           await supabaseAdmin.rpc('reset_period_usage', {
             p_user_id: member.user_id,
-            p_period_start: periodStart,
-            p_period_end: periodEnd,
+            p_period_start: period.periodStart,
+            p_period_end: period.periodEnd,
           })
         }
       }
