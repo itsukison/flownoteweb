@@ -8,6 +8,9 @@
     },
     "src/app/api/jobs/worker/route.ts": {
       "maxDuration": 60
+    },
+    "src/app/api/stripe/webhook/route.ts": {
+      "maxDuration": 30
     }
   },
   "crons": [

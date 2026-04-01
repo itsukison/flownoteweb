@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.flownote.ink'),
+  metadataBase: new URL('https://www.flownote-jp.com'),
   alternates: {
     canonical: '/',
     languages: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
     description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応します。",
-    url: 'https://www.flownote.ink',
+    url: 'https://www.flownote-jp.com',
     siteName: 'Flownote',
     images: [
       {
@@ -116,7 +116,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <link rel="canonical" href="https://www.flownote.ink" />
+        <link rel="canonical" href="https://www.flownote-jp.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0F0F10" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,8 +138,8 @@ export default function RootLayout({
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Windows, macOS, Linux",
               "description": "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応。",
-              "url": "https://www.flownote.ink",
-              "downloadUrl": "https://www.flownote.ink/download",
+              "url": "https://www.flownote-jp.com",
+              "downloadUrl": "https://www.flownote-jp.com/download",
               "softwareVersion": "2.0",
               "datePublished": "2024-01-01",
               "dateModified": "2025-01-01",
@@ -152,7 +152,7 @@ export default function RootLayout({
                 "name": "Flownote",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.flownote.ink/logo.png"
+                  "url": "https://www.flownote-jp.com/logo.png"
                 }
               },
               "offers": {
@@ -181,8 +181,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Flownote",
-              "url": "https://www.flownote.ink",
-              "logo": "https://www.flownote.ink/logo.png",
+              "url": "https://www.flownote-jp.com",
+              "logo": "https://www.flownote-jp.com/logo.png",
               "description": "商談AIアシスタントの開発・提供企業",
               "foundingDate": "2024",
               "contactPoint": {
