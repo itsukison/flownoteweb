@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
                             {isWindows ? 'Windows版をダウンロード' : 'Mac版をダウンロード'}
                         </button>
                     </a>
-                    <Link href="/tutorial">
+                    <Link href="/#demo">
                         <button className="bg-card hover:bg-muted text-foreground font-bold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm border border-border transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                             <ArrowRight size={20} /> デモを見る
                         </button>
@@ -89,6 +89,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="w-full max-w-5xl relative"
+                id="demo"
             >
                 <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent blur-3xl -z-10 rounded-full opacity-50"></div>
 

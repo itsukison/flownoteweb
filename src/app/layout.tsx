@@ -19,7 +19,7 @@ const russoOne = Russo_One({
 
 export const metadata: Metadata = {
   title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
-  description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料をアップロードして会話中の質問に即応。会議の質とスピードを高めます。",
+  description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント（デスクトップアプリ）。資料をアップロードして会話中の質問に即応。会議の質とスピードを高めます。",
   keywords: [
     "商談AI",
     "会議アシスタント",
@@ -49,19 +49,16 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {
       'ja-JP': '/',
-      'en-US': '/en',
     },
   },
   openGraph: {
     title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
-    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応します。",
+    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント（デスクトップアプリ）。資料を活用して会話中の質問に即応します。",
     url: 'https://www.flownote-jp.com',
     siteName: 'Flownote',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/logo.png',
         alt: 'Flownote 商談AIアシスタント',
       },
     ],
@@ -71,8 +68,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
-    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応します。",
-    images: ['/og-image.jpg'],
+    description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント（デスクトップアプリ）。資料を活用して会話中の質問に即応します。",
+    images: ['/logo.png'],
     creator: '@flownote_app',
   },
   robots: {
@@ -87,11 +84,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
   category: 'technology',
   classification: '商談AIアシスタント',
@@ -116,7 +108,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <link rel="canonical" href="https://www.flownote-jp.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0F0F10" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,13 +127,10 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               "name": "Flownote",
               "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Windows, macOS, Linux",
+              "operatingSystem": "Windows, macOS",
               "description": "商談・提案・顧客対応に特化したリアルタイムAIアシスタント。資料を活用して会話中の質問に即応。",
               "url": "https://www.flownote-jp.com",
-              "downloadUrl": "https://www.flownote-jp.com/download",
-              "softwareVersion": "2.0",
-              "datePublished": "2024-01-01",
-              "dateModified": "2025-01-01",
+              "downloadUrl": "https://www.flownote-jp.com/#download",
               "author": {
                 "@type": "Organization",
                 "name": "Flownote Team"
@@ -154,19 +142,6 @@ export default function RootLayout({
                   "@type": "ImageObject",
                   "url": "https://www.flownote-jp.com/logo.png"
                 }
-              },
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "JPY",
-                "availability": "https://schema.org/InStock"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "1250",
-                "bestRating": "5",
-                "worstRating": "1"
               },
               "keywords": "商談AI,会議アシスタント,営業支援,提案支援,顧客対応,リアルタイム回答"
             })
@@ -184,51 +159,13 @@ export default function RootLayout({
               "url": "https://www.flownote-jp.com",
               "logo": "https://www.flownote-jp.com/logo.png",
               "description": "商談AIアシスタントの開発・提供企業",
-              "foundingDate": "2024",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "availableLanguage": ["Japanese", "English"]
+                "availableLanguage": ["Japanese"]
               },
               "sameAs": [
                 "https://twitter.com/flownote_app"
-              ]
-            })
-          }}
-        />
-
-        {/* FAQ Schema for Japanese SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Flownoteは商談中に使えるAIアシスタントですか？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "はい。資料をアップロードし、会話中の質問に対して要点を即時提示する商談AIアシスタントです。"
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "どんな資料に対応していますか？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "提案書、製品資料、価格表、契約条件、FAQなど、商談で使うドキュメントに対応しています。"
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "オンライン会議でも使用できますか？",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "はい、ZoomやTeamsなどのオンライン会議でご利用いただけます。会議中の質問に即応できます。"
-                  }
-                }
               ]
             })
           }}

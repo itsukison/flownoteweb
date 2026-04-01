@@ -196,6 +196,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
       subscription_status: status,
       current_period_start: period.periodStart,
       current_period_end: period.periodEnd,
+      cancel_at_period_end: subscription.cancel_at_period_end ?? false,
     })
     .eq('id', userId)
 
@@ -221,32 +222,72 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   if (!userId) return
 
   const supabaseAdmin = getSupabaseAdmin()
-  const period = getSubscriptionPeriod(subscription)
-  if (!period) return
 
-  // Set canceled — access continues until period end
-  // A cron job will revert to 'free' after period_end passes
+  // Revert the subscription owner to free
   await supabaseAdmin
     .from('profiles')
     .update({
-      subscription_status: 'canceled',
-      current_period_end: period.periodEnd,
+      plan: 'free',
+      subscription_status: 'none',
+      cancel_at_period_end: false,
+      current_period_start: null,
+      current_period_end: null,
+      current_period_usage: 0,
     })
     .eq('id', userId)
 
-  // Deactivate org activation code if business plan
+  // Full business org cleanup
   if (subscription.metadata.plan === 'business') {
-    await supabaseAdmin
-      .from('activation_codes')
-      .update({ is_active: false, deactivated_at: new Date().toISOString() })
-      .eq('org_id', (
-        await supabaseAdmin
-          .from('organizations')
-          .select('id')
-          .eq('stripe_subscription_id', subscription.id)
-          .single()
-      ).data?.id || '')
-      .eq('is_active', true)
+    const { data: org } = await supabaseAdmin
+      .from('organizations')
+      .select('id')
+      .eq('stripe_subscription_id', subscription.id)
+      .single()
+
+    if (org) {
+      // Get all active org members (excluding admin who was already reverted above)
+      const { data: members } = await supabaseAdmin
+        .from('org_members')
+        .select('user_id')
+        .eq('org_id', org.id)
+        .eq('is_active', true)
+
+      // Revert all members' plan to free
+      if (members) {
+        for (const member of members) {
+          await supabaseAdmin
+            .from('profiles')
+            .update({
+              plan: 'free',
+              subscription_status: 'none',
+              cancel_at_period_end: false,
+              current_period_start: null,
+              current_period_end: null,
+              current_period_usage: 0,
+            })
+            .eq('id', member.user_id)
+        }
+      }
+
+      // Deactivate all org members
+      await supabaseAdmin
+        .from('org_members')
+        .update({ is_active: false })
+        .eq('org_id', org.id)
+
+      // Deactivate activation codes
+      await supabaseAdmin
+        .from('activation_codes')
+        .update({ is_active: false, deactivated_at: new Date().toISOString() })
+        .eq('org_id', org.id)
+        .eq('is_active', true)
+
+      // Deactivate the org itself
+      await supabaseAdmin
+        .from('organizations')
+        .update({ is_active: false, updated_at: new Date().toISOString() })
+        .eq('id', org.id)
+    }
   }
 }
 

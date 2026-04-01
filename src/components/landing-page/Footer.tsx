@@ -18,22 +18,26 @@ const Footer: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 md:gap-32">
+                    <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 md:gap-28">
                         <div className="flex flex-col gap-4">
-                            <h4 className="font-bold text-foreground">ナビゲーション</h4>
-                            <Link href="#features" className="text-text-secondary hover:text-foreground transition-colors font-medium">機能</Link>
-                            <Link href="#testimonials" className="text-text-secondary hover:text-foreground transition-colors font-medium">お客様の声</Link>
-                            <Link href="#pricing" className="text-text-secondary hover:text-foreground transition-colors font-medium">料金プラン</Link>
+                            <h4 className="font-bold text-foreground">製品</h4>
+                            <Link href="/flownote" className="text-text-secondary hover:text-foreground transition-colors font-medium">Flownoteとは</Link>
+                            <Link href="/features/real-time-answers" className="text-text-secondary hover:text-foreground transition-colors font-medium">会議中のリアルタイム回答</Link>
+                            <Link href="/features/document-intelligence" className="text-text-secondary hover:text-foreground transition-colors font-medium">資料理解</Link>
+                            <Link href="/features/floating-window" className="text-text-secondary hover:text-foreground transition-colors font-medium">フローティングウィンドウ</Link>
                         </div>
                         <div className="flex flex-col gap-4">
-                            <h4 className="font-bold text-foreground">ダウンロード</h4>
-                            <Link href="#download" className="text-text-secondary hover:text-foreground transition-colors font-medium">Mac版</Link>
-                            <Link href="#download" className="text-text-secondary hover:text-foreground transition-colors font-medium">Windows版</Link>
+                            <h4 className="font-bold text-foreground">用途</h4>
+                            <Link href="/use-cases/sales" className="text-text-secondary hover:text-foreground transition-colors font-medium">営業商談</Link>
+                            <Link href="/use-cases/presales" className="text-text-secondary hover:text-foreground transition-colors font-medium">プリセールス</Link>
+                            <Link href="/use-cases/customer-success" className="text-text-secondary hover:text-foreground transition-colors font-medium">カスタマーサクセス</Link>
+                            <Link href="/use-cases/consulting" className="text-text-secondary hover:text-foreground transition-colors font-medium">コンサル</Link>
                         </div>
                         <div className="flex flex-col gap-4">
-                            <h4 className="font-bold text-foreground">サポート</h4>
-                            <Link href="#support" className="text-text-secondary hover:text-foreground transition-colors font-medium">お問い合わせ</Link>
-                            <Link href="#faq" className="text-text-secondary hover:text-foreground transition-colors font-medium">よくある質問</Link>
+                            <h4 className="font-bold text-foreground">リソース</h4>
+                            <Link href="/alternatives/ai-gijiroku" className="text-text-secondary hover:text-foreground transition-colors font-medium">AI GIJIROKU 代替</Link>
+                            <Link href="/faq" className="text-text-secondary hover:text-foreground transition-colors font-medium">よくある質問</Link>
+                            <Link href="/contact" className="text-text-secondary hover:text-foreground transition-colors font-medium">お問い合わせ</Link>
                         </div>
                     </div>
                 </div>
@@ -43,8 +47,8 @@ const Footer: React.FC = () => {
                         © 2025 Flownote. All rights reserved.
                     </div>
                     <div className="flex items-center gap-6">
-                        <Link href="#" className="hover:text-foreground transition-colors">Twitter</Link>
-                        <Link href="#" className="hover:text-foreground transition-colors">LinkedIn</Link>
+                        <a href="https://twitter.com/flownote_app" className="hover:text-foreground transition-colors" target="_blank" rel="noreferrer">X</a>
+                        <Link href="/contact" className="hover:text-foreground transition-colors">お問い合わせ</Link>
                     </div>
                 </div>
             </div>
