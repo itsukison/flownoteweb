@@ -35,6 +35,7 @@ const Footer: React.FC = () => {
                         </div>
                         <div className="flex flex-col gap-4">
                             <h4 className="font-bold text-foreground">リソース</h4>
+                            <Link href="/tutorials" className="text-text-secondary hover:text-foreground transition-colors font-medium">チュートリアル</Link>
                             <Link href="/alternatives/ai-gijiroku" className="text-text-secondary hover:text-foreground transition-colors font-medium">AI GIJIROKU 代替</Link>
                             <Link href="/faq" className="text-text-secondary hover:text-foreground transition-colors font-medium">よくある質問</Link>
                             <Link href="/contact" className="text-text-secondary hover:text-foreground transition-colors font-medium">お問い合わせ</Link>

@@ -1,6 +1,8 @@
+'use client'
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, Globe, Apple, Monitor } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
@@ -16,22 +18,28 @@ const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { downloadUrl, os } = useLatestRelease();
+    const pathname = usePathname();
 
+    const isTutorials = pathname?.startsWith('/tutorials');
     const isWindows = os === 'windows';
 
     useEffect(() => {
+        if (isTutorials) return;
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isTutorials]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center pt-4 px-4`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center ${isTutorials ? '' : 'pt-4 px-4'}`}>
             <div className={`
-        flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300
-        ${scrolled ? 'bg-background/80 backdrop-blur-md shadow-sm border border-border w-full max-w-5xl' : 'bg-transparent w-full max-w-7xl'}
+        flex items-center justify-between transition-all duration-300
+        ${isTutorials
+            ? 'w-full px-6 py-3 bg-background/80 backdrop-blur-md shadow-sm border-b border-border'
+            : `px-6 py-3 rounded-full ${scrolled ? 'bg-background/80 backdrop-blur-md shadow-sm border border-border w-full max-w-5xl' : 'bg-transparent w-full max-w-7xl'}`
+        }
       `}>
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-0.5 cursor-pointer group hover:opacity-80 transition-opacity">
@@ -53,6 +61,9 @@ const Navbar: React.FC = () => {
                     </Link>
                     <Link href="#pricing" className="text-sm font-medium text-text-secondary hover:text-foreground transition-colors font-semibold">
                         料金
+                    </Link>
+                    <Link href="/tutorials" className={`text-sm font-medium transition-colors font-semibold ${isTutorials ? 'text-foreground' : 'text-text-secondary hover:text-foreground'}`}>
+                        チュートリアル
                     </Link>
                 </div>
 
@@ -87,6 +98,7 @@ const Navbar: React.FC = () => {
                         <Link href="#features" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>機能</Link>
                         <Link href="#testimonials" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>お客様の声</Link>
                         <Link href="#pricing" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>料金</Link>
+                        <Link href="/tutorials" className="font-semibold text-foreground" onClick={() => setMobileMenuOpen(false)}>チュートリアル</Link>
                         <div className="h-px bg-border my-2"></div>
                         <a href={downloadUrl} onClick={() => setMobileMenuOpen(false)}>
                             <Button className="w-full bg-accent text-primary-foreground hover:bg-accent-hover font-bold rounded-full flex items-center gap-2">
