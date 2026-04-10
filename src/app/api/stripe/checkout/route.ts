@@ -78,14 +78,16 @@ export async function POST(req: NextRequest) {
           seats: String(seats),
         },
       },
+      allow_promotion_codes: true,
       success_url: `${baseUrl}/subscription/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/subscription/cancel`,
       locale: 'ja',
     })
 
     return NextResponse.json({ url: session.url })
-  } catch (err) {
+  } catch (err: any) {
     console.error('Checkout error:', err)
-    return NextResponse.json({ error: 'Failed to create checkout session' }, { status: 500 })
+    const msg = err?.message || String(err) || 'Failed to create checkout session'
+    return NextResponse.json({ error: msg }, { status: 500 })
   }
 }
