@@ -47,8 +47,9 @@ const Footer: React.FC = () => {
                     <div className="opacity-80">
                         © 2025 Flownote. All rights reserved.
                     </div>
-                    <div className="flex items-center gap-6">
+                    <div className="flex flex-wrap justify-center items-center gap-6">
                         <a href="https://twitter.com/flownote_app" className="hover:text-foreground transition-colors" target="_blank" rel="noreferrer">X</a>
+                        <Link href="/tokushoho" className="hover:text-foreground transition-colors">特定商取引法に基づく表記</Link>
                         <Link href="/contact" className="hover:text-foreground transition-colors">お問い合わせ</Link>
                     </div>
                 </div>
