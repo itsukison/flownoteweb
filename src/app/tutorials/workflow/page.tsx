@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   title: 'ワークフローの設定と使い方 | Flownote チュートリアル',
   description:
     'テンプレートを使ったワークフロー設定、Slack連携、変数の使い方、実行履歴の確認方法を解説します。',
+  alternates: {
+    canonical: '/tutorials/workflow',
+    languages: { 'ja-JP': '/tutorials/workflow' },
+  },
 }
 
 export default function WorkflowPage() {

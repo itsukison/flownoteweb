@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: 'プロンプト設定 | Flownote チュートリアル',
   description:
     'システム・クイック・文字起こし・サマリープロンプトの役割と作り方。AIの回答品質を自分好みに最適化する方法を解説します。',
+  alternates: {
+    canonical: '/tutorials/prompts',
+    languages: { 'ja-JP': '/tutorials/prompts' },
+  },
 }
 
 export default function PromptsPage() {

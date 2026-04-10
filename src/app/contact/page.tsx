@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Flownoteへのお問い合わせはこちら。導入相談やデモのご依頼を受け付けています。",
   alternates: {
     canonical: "/contact",
+    languages: { "ja-JP": "/contact" },
   },
 };
 

@@ -5,6 +5,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'チュートリアル概要 | Flownote',
   description: 'Flownoteの使い方ガイド一覧。文字起こし、質問検出、ワークフロー、プロンプト設定の4つのチュートリアルで基本操作をマスターしましょう。',
+  alternates: {
+    canonical: '/tutorials',
+    languages: { 'ja-JP': '/tutorials' },
+  },
 }
 
 const tutorials = [

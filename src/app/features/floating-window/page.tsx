@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Flownoteのフローティングウィンドウは会議の隅に常駐し、必要なときだけ回答を確認できる商談AIアシスタントの機能です。",
   alternates: {
     canonical: "/features/floating-window",
+    languages: { "ja-JP": "/features/floating-window" },
   },
 };
 

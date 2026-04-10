@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "AI GIJIROKUの代替を探している方向けに、Flownoteの特徴と選び方を整理。商談中のリアルタイム回答に強い商談AIアシスタントです。",
   alternates: {
     canonical: "/alternatives/ai-gijiroku",
+    languages: { "ja-JP": "/alternatives/ai-gijiroku" },
   },
 };
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "顧客からの質問に即応し、回答の一貫性を保つ。FlownoteはCS向けの商談AIアシスタントです。",
   alternates: {
     canonical: "/use-cases/customer-success",
+    languages: { "ja-JP": "/use-cases/customer-success" },
   },
 };
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Flownoteは会議中の質問を検出し、資料に基づいた回答をリアルタイムに提示する商談AIアシスタントです。",
   alternates: {
     canonical: "/features/real-time-answers",
+    languages: { "ja-JP": "/features/real-time-answers" },
   },
 };
 

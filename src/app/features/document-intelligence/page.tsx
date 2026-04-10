@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Flownoteは提案書・価格表・FAQを理解し、会議中の質問に根拠ある回答を提示する商談AIアシスタントです。",
   alternates: {
     canonical: "/features/document-intelligence",
+    languages: { "ja-JP": "/features/document-intelligence" },
   },
 };
 

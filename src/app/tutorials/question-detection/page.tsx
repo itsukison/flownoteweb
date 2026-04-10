@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: '質問検出モードの使い方 | Flownote チュートリアル',
   description:
     '相手の発言から質問を自動検出してAI回答を生成する方法と、コスト管理について解説します。',
+  alternates: {
+    canonical: '/tutorials/question-detection',
+    languages: { 'ja-JP': '/tutorials/question-detection' },
+  },
 }
 
 export default function QuestionDetectionPage() {

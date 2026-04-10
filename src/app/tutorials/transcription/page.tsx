@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: '文字起こしモードの使い方 | Flownote チュートリアル',
   description:
     'Flownoteの文字起こしモードを使ってリアルタイムで会話を記録し、クイックプロンプトや手入力でAIに質問する方法を解説します。',
+  alternates: {
+    canonical: '/tutorials/transcription',
+    languages: { 'ja-JP': '/tutorials/transcription' },
+  },
 }
 
 export default function TranscriptionPage() {

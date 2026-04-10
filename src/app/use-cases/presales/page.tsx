@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "技術的な質問にも即応。Flownoteは資料に基づく回答を提示する商談AIアシスタントです。",
   alternates: {
     canonical: "/use-cases/presales",
+    languages: { "ja-JP": "/use-cases/presales" },
   },
 };
 

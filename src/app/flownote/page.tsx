@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Flownoteは商談中のリアルタイム回答を支援する商談AIアシスタント（デスクトップアプリ）。資料を理解し、会話中の質問に即応します。",
   alternates: {
     canonical: "/flownote",
+    languages: { "ja-JP": "/flownote" },
   },
 };
 

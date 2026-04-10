@@ -58,18 +58,20 @@ export const metadata: Metadata = {
     siteName: 'Flownote',
     images: [
       {
-        url: '/logo.png',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
         alt: 'Flownote 商談AIアシスタント',
       },
     ],
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+    twitter: {
     card: 'summary_large_image',
     title: "Flownote - 商談AIアシスタント | 会議中のリアルタイム回答支援",
     description: "商談・提案・顧客対応に特化したリアルタイムAIアシスタント（デスクトップアプリ）。資料を活用して会話中の質問に即応します。",
-    images: ['/logo.png'],
+    images: ['/og-image.png'],
     creator: '@flownote_app',
   },
   robots: {
@@ -84,6 +86,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'REPLACE_WITH_YOUR_GSC_VERIFICATION_CODE',
   },
   category: 'technology',
   classification: '商談AIアシスタント',
@@ -156,13 +161,24 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Flownote",
+              "legalName": "株式会社Core7",
               "url": "https://www.flownote-jp.com",
               "logo": "https://www.flownote-jp.com/logo.png",
               "description": "商談AIアシスタントの開発・提供企業",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "桜3-9-24",
+                "addressLocality": "世田谷区",
+                "addressRegion": "東京都",
+                "postalCode": "156-0053",
+                "addressCountry": "JP"
+              },
+              "telephone": "+81-80-8700-4730",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "availableLanguage": ["Japanese"]
+                "availableLanguage": ["Japanese"],
+                "email": "itsukison00@gmail.com"
               },
               "sameAs": [
                 "https://twitter.com/flownote_app"
